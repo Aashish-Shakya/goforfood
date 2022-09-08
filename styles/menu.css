@@ -71,18 +71,25 @@ img#menuIcon {
 
 
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
-.Menu {
-    background-image: url(images/menubodybg-1.jpg);
+.menu-container {
+    background-image: url(../images/menubodybg-1.jpg);
     background-size: cover;
 }
 
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
 
 .menu--card-container {
     display: flex;
+    /* flex-direction: column; */
     justify-content: center;
-
-    margin-left: 20px;
+    gap: 10px;
+    flex-wrap: wrap;
+    /* margin-left: 20px; */
 }
 
 .menu--card {
@@ -100,73 +107,40 @@ img#menuIcon {
 }
 
 .card--imgbx {
-    position: relative;
-    top: 8%;
     display: flex;
     justify-content: center;
-    /* transform: translateY(-50%); */
-    /* width: 100%; */
-    /* height: 250px; */
-    /* transition: 0.5s; */
-    /* border: 2px solid black; */
-}
-
-.card--imgbx .menu--item-image {
-    display: flex;
-    justify-content: center;
-    /* position: absolute; */
-    /* top: -50px;
-    left: 50%; */
-    /* transform: translate(-50%, -50%) rotate(0deg); */
-    width: 270px;
-    height: 250px;
-    /* background-size: cover; */
-    border-radius: 10px;
-}
-
-.contentBx {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    transition: 0.5s;
     position: absolute;
-    /* top: 10%; */
-    bottom: 20%;
-}
-
-/* ------------------------------------------------------------- */
-.container .card .imgBx {
-    position: absolute;
-    top: 40%;
+    top: 33%;
     transform: translateY(-50%);
     width: 100%;
     height: 240px;
     transition: 0.5s;
+
 }
 
-.container .card:hover .imgBx {
-    top: 0;
-    transform: none;
-}
 
-.container .card .imgBx img {
-    position: absolute;
+.card--imgbx .menu--item-image {
+    display: flex;
+    justify-content: center;
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
+    transform: translate(-50%, -50%) rotate(0deg); */
     width: 270px;
     height: 250px;
     background-size: cover;
     border-radius: 10px;
 }
 
-.container .card:hover .imgBx img {
-    height: 200px;
-    border-radius: 20px;
-    /* transition-duration: 0.2s;
-   transition-timing-function: ease-in-out; */
-}
 
-.container .card .contentBx {
+
+
+
+.contentBx {
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -176,41 +150,26 @@ img#menuIcon {
     z-index: 10;
 }
 
-.container .card:hover .contentBx {
-    height: 210px;
-}
 
-.container .card .contentBx h2 {
+
+.contentBx h2 {
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
     color: #141414;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
-.container .card .contentBx button {
+
+
+.contentBx h3 {
     display: inline-block;
-    padding: 10px 20px;
-    background: #FFFFFF;
-    border-radius: 4px;
-    margin-top: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    color: #111111;
-    opacity: 0;
-    transform: translateY(50px);
-    transition: 0.5s;
-    border: solid 2px green;
-}
+    /* display: flex; */
+    justify-content: center;
+    width: 50%;
+    align-items: center;
 
-.container .card:hover .contentBx button {
-    opacity: 1;
-    transform: translateY(0px);
-    transition-delay: 0.75s;
-}
-
-.container .card .contentBx h3 {
-    display: inline-block;
     padding: 10px 20px;
     background: #f1ebeb;
     border-radius: 4px;
@@ -225,16 +184,207 @@ img#menuIcon {
     opacity: 0;
 }
 
-.container .card:hover .contentBx h3 {
+
+
+
+.contentBx button {
+    display: inline-block;
+    padding: 10px 20px;
+    width: 50%;
+    /* background: #FFFFFF; */
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+    border: solid 2px green;
+}
+
+
+.menu--card:hover .card--imgbx {
+    top: 5%;
+    transform: none;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+/* 
+.card--imgbx:hover {
+    top: 0;
+    transform: none;
+}*/
+.menu--card:hover .menu--item-image {
+    height: 200px;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+/* 
+.menu--item-image:hover {
+    height: 200px;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+*/
+
+.menu--card:hover .contentBx {
+    height: 150px;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+/* 
+.contentBx:hover {
+    height: 210px;
+}
+*/
+
+/* 
+.menu--card-container .menu--card:hover .contentBx h3 {
     transform: translateY(0px);
     transition-delay: 0.65s;
-    /* For visiblity the content  opacity 1 */
+ 
     opacity: 1;
+}
+*/
+.menu--card:hover .contentBx h3 {
+    transform: translateY(0px);
+    transition-delay: 0.65s;
+
+    opacity: 1;
+}
+
+.menu--card:hover .contentBx button {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
+
+.menu--item-image {
+    /* width: 320px; */
+}
+
+/* 
+.menu--card-container .menu--card:hover .contentBx button {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
+
+*/
+
+.menu--item-price strike {
+    color: red;
+    margin: 10px;
+}
+
+/* ------------------------------------------------------------- */
+/* .container .card .imgBx {
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 240px;
+    transition: 0.5s;
+} */
+
+/* .container .card:hover .imgBx {
+    top: 0;
+    transform: none;
+} */
+
+/* .container .card .imgBx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 270px;
+    height: 250px;
+    background-size: cover;
+    border-radius: 10px;
+} */
+
+/* .container .card:hover .imgBx img {
+    height: 200px;
+    border-radius: 20px; */
+/* transition-duration: 0.2s;
+   transition-timing-function: ease-in-out; */
+/* } */
+
+/* .container .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+} */
+
+/* .container .card:hover .contentBx {
+    height: 210px;
+} */
+
+/* .container .card .contentBx h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #141414;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+} */
+
+/* .container .card .contentBx button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #FFFFFF;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111111;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+    border: solid 2px green;
+} */
+
+/* .container .card:hover .contentBx button {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+} */
+
+/* .container .card .contentBx h3 {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #f1ebeb;
+    border-radius: 4px;
+    margin-top: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #111111;
+    transform: translateY(50px);
+    transition: 0.5s;
+    font-size: 20px;
+    /* For hidding the content  opacity 0 */
+/* opacity: 0; */
+/* } */
+
+/* .container .card:hover .contentBx h3 {
+    transform: translateY(0px);
+    transition-delay: 0.65s; */
+/* For visiblity the content  opacity 1 */
+/* opacity: 1;
 }
 
 .image {
     width: 320px;
-}
+} */
 
 .category {
     display: flex;
@@ -244,7 +394,7 @@ img#menuIcon {
 
 
 
-.categoryHeading {
+.menu--category {
     font-family: chalk;
     color: whitesmoke;
     font-size: xx-large;

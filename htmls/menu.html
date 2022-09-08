@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-    <link rel="stylesheet" href="styles/menu.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/menu.css">
 </head>
 
 <body>
@@ -16,9 +16,9 @@
         <!-- <div class="item"> -->
         <h4 class="title">GO 4 FOOD</h4>
         <ul class="nav-items">
-            <img src="images/logopic.jpg" alt="Logo Pic" class="nav-logo">
+            <img src="../images/logopic.jpg" alt="Logo Pic" class="nav-logo">
 
-            <li class="nav-links"><a href="">Home</a></li>
+            <li class="nav-links"><a href="index.html">Home</a></li>
             <li class="nav-links"><a href="menu.html">Menu</a></li>
             <li class="nav-links"><a href="">Cart</a></li>
             <li class="nav-links"><a href="">Orders</a></li>
@@ -41,36 +41,97 @@
                 <li class="category"><a>South-Indian </a></li>
                 <li class="category"><a>Sweet </a></li>
                 <li class="category"><a>Drinks </a></li>
+
+
+
+
             </ul>
         </nav>
     </div>
 
 
 
+    <div class="menu-container">
+        <div class="menu--title">
 
-    <div class="menu--title">
+            <img id="menuIcon" src="../images/menu_2.png">
+        </div>
 
-        <img id="menuIcon" src="images/menu_2.png">
-    </div>
-
-    <!-- Menu -->
-    <div class="Menu">
+        <!-- Menu -->
+        <div class="menu">
 
 
-        <div class="menu--card-container">
-            <div class="menu--category">
+            <div class="menu--category" id="category">
                 American
             </div>
-            <div class="menu--card">
-                <div class="card--imgbx"><img src="images/ggp.jfif" alt="menu-item" class="menu--item-image"></div>
-                <div class="contentBx">
-                    <h2 class="menu--item-title">Gol Gappe</h2>
-                    <h3 class="menu--item-price">20</h3>
-                    <button>Add</button>
+            <div class="menu--card-container">
+
+                <div class="menu--card">
+                    <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="menu--item-title">Gol Gappe</h2>
+                        <h3 class="menu--item-price"><strike>1000</strike>20</h3>
+                        <button>Add</button>
+                    </div>
+                </div>
+                <div class="menu--card">
+                    <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="menu--item-title">Gol Gappe</h2>
+                        <h3 class="menu--item-price"><strike>1000</strike>20</h3>
+                        <button>Add</button>
+                    </div>
+                </div>
+                <div class="menu--card">
+                    <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="menu--item-title">Gol Gappe</h2>
+                        <h3 class="menu--item-price"><strike>1000</strike>20</h3>
+                        <button>Add</button>
+                    </div>
+                </div>
+                <div class="menu--card">
+                    <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="menu--item-title">Gol Gappe</h2>
+                        <h3 class="menu--item-price"><strike>1000</strike>20</h3>
+                        <button>Add</button>
+                    </div>
+                </div>
+                <div class="menu--card">
+                    <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="menu--item-title">Gol Gappe</h2>
+                        <h3 class="menu--item-price"><strike>1000</strike>20</h3>
+                        <button>Add</button>
+                    </div>
+                </div>
+                <div class="menu--card">
+                    <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="menu--item-title">Gol Gappe</h2>
+                        <h3 class="menu--item-price"><strike>1000</strike>20</h3>
+                        <button>Add</button>
+                    </div>
+                </div>
+                <div class="menu--card">
+                    <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image">
+                    </div>
+                    <div class="contentBx">
+                        <h2 class="menu--item-title">Gol Gappe</h2>
+                        <h3 class="menu--item-price"><strike>1000</strike>20</h3>
+                        <button>Add</button>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- <% for (Map.Entry<String, List<Dish>> category : bo.categorizeDishes().entrySet()) {
+
+            <!-- <% for (Map.Entry<String, List<Dish>> category : bo.categorizeDishes().entrySet()) {
             out.print("<div id=" + category.getKey() + " class=\"categoryHeading\"> <span class='heading'>"
                     + category.getKey().toUpperCase() + "</span> DISHES</div>
             <div class=\"category\">");
@@ -98,6 +159,7 @@
             }
             %> -->
 
+        </div>
     </div>
     <!-- Menu ends -->
 
