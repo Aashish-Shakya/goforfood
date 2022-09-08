@@ -11,7 +11,8 @@
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <link rel="stylesheet" href="/styles/c">
+    <link rel="stylesheet" href="../styles/cart.css">
+    <link rel="stylesheet" href="../styles/index.css">
 
     <script src="js/cart.js" async></script>
     <style type="text/css">
@@ -29,8 +30,9 @@
 
 </head>
 
-<body onload="submitPayuForm();">
-    <script>
+<body>
+
+    <!-- <script>
 
 
         var hash = '<%=hash%>';
@@ -40,97 +42,104 @@
                 return;
 
             var payuForm = document.forms.payuForm;
-            payuForm.submit();
+            payuForm.submit(
         }
 
         function paycod() {
             window.location = 'cod.jsp';
         }
-    </script>
+    </script> -->
+    <nav class="navbar">
+        <!-- <div class="item"> -->
+        <h4 class="title">GO 4 FOOD</h4>
+        <ul class="nav-items">
+            <img src="../images/logopic.jpg" alt="Logo Pic" class="nav-logo">
 
+            <li class="nav-links"><a href="../index.html">Home</a></li>
+            <li class="nav-links"><a href="menu.html">Menu</a></li>
+            <li class="nav-links"><a href="../htmls/cart.html">Cart</a></li>
+            <li class="nav-links"><a href="">Orders</a></li>
+
+        </ul>
+        <div class="right">
+            <a href="">Login</a>
+        </div>
+        </div>
+    </nav>
 
     <div class="cartbody">
         <div class="container">
             <div class="Cart-Container cart">
                 <h3 class="Heading">Shopping Cart</h3>
 
-                "<div>
-                    <h5 class=\"Action\" onclick=\"removeAll()\" style=\"text-align: right;\">Remove all</h5>"
-                    + "
-                </div>"
+                <div>
+                    <h5 class="Action" style="text-align: right;">Remove all</h5>
 
-                + "<table class=\"table\">" + "<thead>" + "<tr>" + "<th scope=\"col\">Product</th>"
-                            + "<th scope=\"col\">Name</th>" + "<th scope=\"col\">Quantity</th>"
-                            + "<th scope=\"col\">Price</th>" + "<th scope=\"col\">Cost</th>"
-                            + "<th scope=\"col\">Remove</th>" + "</tr>" + "
-                    </thead>" + "<tbody>");
+                </div>
 
-                        for (Map.Entry<Dish, Integer> item : map.entrySet()) {
-                            totalamount += ((item.getKey().getPrice() -
-                            item.getKey().getDiscount()) * item.getValue());
-                            if (item.getKey() != null) {
-                            out.print("<tr>
-                                <td class=\"image-box\"><img src=\"" + item.getKey().getImage_url() + "\"
-                                        style=\"height: 120px;\" /></td>" + "<td class=\"about\">"
-                                    + "<h1 class=\"title\">" +
-                                        item.getKey().getName() + "</h1>" + "
-                                </td>"
-                                + "<td class=\"counter\">" + "<div onclick=\"updateQty('" + item.getKey().getName()
-                                        + "', " + (item.getValue() - 1) + ")\" class=\"btn\">-</div>"
-                                    + "<div class=\"count\">" + item.getValue()
-                                        + "</div>"
-                                    + "<div onclick=\"updateQty('" + item.getKey().getName() + "', " + (item.getValue()
-                                        + 1) + ")\" class=\"btn\">+</div>" + "</td>"
-                                + "<td class=\"unit_price\">"
-                                    + (item.getKey().getPrice() -
-                                    item.getKey().getDiscount()) + "</td>"
-                                + "<td class=\"prices\">" + "<div class=\"amount\">"
-                                        + ((item.getKey().getPrice() -
-                                        item.getKey().getDiscount()) *
-                                        item.getValue())
-                                        + "</div>" + "</td>
-                                <td>
-                                    <div onclick=\"remove('" + item.getKey().getName() + "', " + (item.getValue() + 1)
-                                        + ")\" class=\"remove\"><u>Remove</u></div>
-                                </td>
-                            </tr>");
-                            }
-                            }
-                            out.print("</table>");
-                int totalItems = cartBo.total((String)
-                session.getAttribute("username"));
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col">Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
 
-                out.print(
-                "<div class=\"checkout\">
-                    <div class=\"total\">
-                        <div class=\"grandtotal\">
-                            <div class=\"Subtotal\">Sub-Total</div>
-                            <div class=\"items\">");
-                                if (totalItems > 1) {
-                                out.print(totalItems + " items");
-                                } else {
-                                out.print(totalItems + " item");
-                                }
 
-                                out.print("</div>
+                        <tr>
+                            <td class="image-box"><img src="../images/ggp.jfif" style="height: 120px;" /></td>
+                            <td class="about">
+                                <h1 class="title"> Gol Gappe
+                                </h1>
+                            </td>
+                            <td class="counter">
+                                <div class="btn">-</div>
+                                <div class="count">2
+                                </div>
+                                <div class="btn">+</div>
+                            </td>
+                            <td class="unit_price">100
+                            </td>
+                            <td class="prices">
+                                <div class="amount">
+                                    200
+                                </div>
+                            </td>
+                            <td>
+                                <div class="remove"><u>Remove</u></div>
+                            </td>
+                        </tr>
+
+                </table>
+
+
+
+                <div class="checkout">
+                    <div class="total">
+                        <div class="grandtotal">
+                            <div class="Subtotal">Sub-Total</div>
+                            <div class="items">2 Items
+                            </div>
                         </div>
-                        <div class=\"total-amount\">Rs. " + totalamount + "
+                        <div class="total-amount">Rs. 200
                         </div>
                     </div>
-                </div>");
-                } else {
-                out.print("<h1 class=\"display-1\">
+                </div>
+
+                <h1 class="display-1">
                     <p> There are no item in the cart.</p>
-                </h1>");
-                }
-                } else {
-                out.print("<h1 class=\"display-1\" style=\"color: red\">
+                </h1>
+
+                <h1 class="display-1" style="color: red">
                     <p> Please Log in first!</p>
-                </h1>");
-                }
-                session.setAttribute("cart", map);
-                session.setAttribute("tamount", totalamount.toString());
-                %>
+                </h1>
+
+
             </div>
         </div>
 
@@ -146,21 +155,14 @@
                                     <h3 class="DA">Delivery Address</h3>
                                     <br> <br> <br> <label for="fname"><i class="fa fa-user"></i> Full
                                         Name</label> <input type="text" id="fname" name="firstname"
-                                        value="<%=(empty((String) session.getAttribute(" fname"))) ? "" :
-                                        session.getAttribute("fname").toString()%>">
+                                        value=" Aashish Shakya">
                                     <label for="email"><i class="fa fa-envelope"></i>
                                         Email</label>
-                                    <input type="text" id="email" name="email"
-                                        value="<%=(empty((String) session.getAttribute(" email"))) ? "" :
-                                        session.getAttribute("email").toString()%>">
+                                    <input type="text" id="email" name="email" value="aashish.shakya@xyz.com">
                                     <label for="mob"><i class="fa fa-phone"></i>
-                                        Address</label> <input type="text" id="mob" name="mobile"
-                                        value="<%=(empty((String) session.getAttribute(" mobileno"))) ? "" :
-                                        session.getAttribute("mobileno").toString()%>">
+                                        Address</label> <input type="text" id="mob" name="mobile" value="B-60A Delhi">
                                     <label for="adr"><i class="fa fa-address-card-o"></i>
-                                        Address</label> <input type="text" id="adr" name="address"
-                                        value="<%=(empty((String) session.getAttribute(" address"))) ? "" :
-                                        session.getAttribute("address").toString()%>">
+                                        Address</label> <input type="text" id="adr" name="address" value="Vikas Nagar">
                                     <label for="city"><i class="fa fa-institution"></i>
                                         City</label> <input type="text" id="city" name="city" value="">
                                     <div class="row">
@@ -173,39 +175,39 @@
                                     </div>
                                 </div>
                             </div>
-                            <% session.setAttribute("amount", totalamount.toString()); %>
-                                <form action="<%=action1%>" method="post" name="payuForm">
-                                    <input type="hidden" name="key" value="<%=merchant_key%>" /> <input type="hidden"
-                                        name="hash" value="<%=hash%>" /> <input type="hidden" name="txnid"
-                                        value="<%=txnid%>" /> <input type="hidden" name="udf2" value="<%=txnid%>" />
-                                    <input type="hidden" name="service_provider" value="payu_paisa" /> <input
-                                        type="hidden" name="amount" value="<%=totalamount%>" />
-                                    <input type="hidden" name="firstname" id="firstname" value="<%=(empty(params.get("
-                                        firstname"))) ? "" : params.get("firstname")%>" />
 
-                                    <input type="hidden" name="email" id="email" value="<%=(empty(params.get(" email")))
-                                        ? "" : params.get("email")%>" />
+                            <form action="<%=action1%>" method="post" name="payuForm">
+                                <!--   <input type="hidden" name="key" value="<%=merchant_key%>" /> <input type="hidden"
+                                    name="hash" value="<%=hash%>" /> <input type="hidden" name="txnid"
+                                    value="<%=txnid%>" /> <input type="hidden" name="udf2" value="<%=txnid%>" />
+                                <input type="hidden" name="service_provider" value="payu_paisa" /> <input type="hidden"
+                                    name="amount" value="<%=totalamount%>" />
+                                <input type="hidden" name="firstname" id="firstname" value="<%=(empty(params.get("
+                                    firstname"))) ? "" : params.get("firstname")%>" />
 
-                                    <input type="hidden" name="phone" value="<%=(empty(params.get(" phone"))) ? "" :
-                                        params.get("phone")%>" />
+                                <input type="hidden" name="email" id="email" value="<%=(empty(params.get(" email")))
+                                    ? "" : params.get("email")%>" />
 
-                                    <input type="hidden" name="productinfo" value="<%=(empty(params.get("
-                                        productinfo"))) ? "" : params.get("productinfo")%>"
-                                    size="64" /> <input type="hidden" name="surl" value="<%=(empty(params.get(" surl")))
-                                        ? "" : params.get("surl")%>"
-                                    size="64" /> <input type="hidden" name="furl" value="<%=(empty(params.get(" furl")))
-                                        ? "" : params.get("furl")%>"
-                                    size="64" />
+                                <input type="hidden" name="phone" value="<%=(empty(params.get(" phone"))) ? "" :
+                                    params.get("phone")%>" />
 
-                                    <% if (empty(hash)) { %>
-                                        <div class="payu">
-                                            <input type="submit" value="PayUmoney" class="checkoutbtn" />
-                                            <input type="button" onclick="paycod()" value="COD" class="checkoutbtn" />
-                                        </div>
-                                        <% } %>
+                                <input type="hidden" name="productinfo" value="<%=(empty(params.get(" productinfo")))
+                                    ? "" : params.get("productinfo")%>"
+                                size="64" /> <input type="hidden" name="surl" value="<%=(empty(params.get(" surl")))
+                                    ? "" : params.get("surl")%>"
+                                size="64" /> <input type="hidden" name="furl" value="<%=(empty(params.get(" furl")))
+                                    ? "" : params.get("furl")%>"
+                                size="64" />
+
+-->
+                                <div class="payu">
+                                    <input type="submit" value="PayUmoney" class="checkoutbtn" />
+                                    <input type="button" onclick="paycod()" value="COD" class="checkoutbtn" />
+                                </div>
 
 
-                                </form>
+
+                            </form>
 
                         </div>
                     </div>
@@ -213,7 +215,7 @@
             </div>
         </div>
     </div>
-    <script>
+    <!-- <script>
         if (sessionStorage.getItem("city") != null) {
             document.getElementById("city").value = sessionStorage
                 .getItem("city")
@@ -228,8 +230,29 @@
             document.getElementById("zip").value = sessionStorage
                 .getItem("pincode")
         }
-    </script>
+    </script> -->
 
+    <footer>
+        <div class="footer-items">
+            <div class="social-icons">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="index.html" class="links">Home</a>
+                <a href="" class="links">Service</a>
+                <a href="/htmls/aboutus.html" class="links">About Us</a>
+                <a href="/htmls/gallery.html" class="links">Galery</a>
+                <a href="/htmls/contact.html" class="links">Contact Us</a>
+
+            </div>
+
+            <h3 class="disclaimer">Disclaimer!----</h3>
+        </div>
+    </footer>
 </body>
 
 </html>
