@@ -4,13 +4,13 @@ gallery css * {
 }
 
 body {
-    background: rgba(0, 0, 0, 0.7) url(alter.jpg);
+    background: rgba(0, 0, 0, 0.7) url("../images/alter.jpg");
     background-size: cover;
     background-blend-mode: darken;
 }
 
 .body12 {
-    background: rgba(0, 0, 0, 0.7) url(alter.jpg);
+    background: rgba(0, 0, 0, 0.7) url("../images/alter.jpg");
     background-size: cover;
     background-blend-mode: darken;
 }

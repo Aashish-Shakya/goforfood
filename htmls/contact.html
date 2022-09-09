@@ -1,40 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-    <!DOCTYPE html>
-    <html>
+<!DOCTYPE html>
+<html>
 
-    <head>
-        <meta charset="ISO-8859-1">
-        <title>Insert title here</title>
-        <link rel="stylesheet" href="css/contact.css">
-        <%@include file="components/header.jsp" %>
-    </head>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <link rel="stylesheet" href="../styles/contact.css">
+    <link rel="stylesheet" href="../styles/index.css">
+
+</head>
+
+<body>
+    <nav class="navbar">
+        <!-- <div class="item"> -->
+        <h4 class="title">GO 4 FOOD</h4>
+        <ul class="nav-items">
+            <img src="../images/logopic.jpg" alt="Logo Pic" class="nav-logo">
+
+            <li class="nav-links"><a href="../index.html">Home</a></li>
+            <li class="nav-links"><a href="../htmls/menu.html">Menu</a></li>
+            <li class="nav-links"><a href="../htmls/cart.html">Cart</a></li>
+            <li class="nav-links"><a href="">Orders</a></li>
+
+        </ul>
+        <div class="right">
+            <a href="">Login</a>
+        </div>
+        </div>
+    </nav>
 
     <body>
-        <%@include file="components/navigationbar.jsp" %>
-
-            <body>
-                <div class="main-block">
-                    <div class="left-part">
-                        <i class="fas fa-envelope"></i>
-                        <i class="fas fa-at"></i>
-                        <i class="fas fa-mail-bulk"></i>
-                    </div>
-                    <form>
-                        <h1>Contact Us</h1>
-                        <div class="info">
-                            <input class="fname" type="text" name="name" placeholder="Full name">
-                            <input type="text" name="name" placeholder="Email">
-                            <input type="number" name="name" placeholder="Phone number">
-                            <input type="text" name="name" placeholder="Website">
-                        </div>
-                        <p>Message</p>
-                        <div>
-                            <textarea rows="4"></textarea>
-                        </div>
-                        <button type="submit">Submit</button>
-                    </form>
+        <div class="main-block">
+            <div class="left-part">
+                <i class="fas fa-envelope"></i>
+                <i class="fas fa-at"></i>
+                <i class="fas fa-mail-bulk"></i>
+            </div>
+            <form>
+                <h1>Contact Us</h1>
+                <div class="info">
+                    <input class="fname" type="text" name="name" placeholder="Full name">
+                    <input type="text" name="name" placeholder="Email">
+                    <input type="number" name="name" placeholder="Phone number">
+                    <input type="text" name="name" placeholder="Website">
                 </div>
-                <%@include file="components/footer.jsp" %>
-            </body>
+                <p>Message</p>
+                <div>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
 
-    </html>
+    </body>
+
+</html>

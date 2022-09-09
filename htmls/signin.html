@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/Signin.css">
+    <link rel="stylesheet" href="../styles/index.css">
+    <link rel="stylesheet" href="../styles/signin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap" rel="stylesheet">
@@ -33,19 +34,26 @@
 </head>
 
 <body>
-    <nav class="navbar">
-        <ul class="nav-list">
-            <p class="left">GO 4 FOOD</p>
-            <div class="logo">
-                <img src="images/logopic.jpg" alt="logo">
-            </div>
-            <li class="home"><a href="home.jsp">Home</a></li>
-            <li><a href="Menu.jsp">Menu </a></li>
-            <li><a href="cart">Cart</a></li>
-            <li><a href="orders.jsp">Orders</a></li>
-            <li><a href="./Signup.jsp">Sign up</a></li>
-        </ul>
 
+    <nav class="navbar">
+        <!-- <div class="item"> -->
+        <h4 class="title">GO 4 FOOD</h4>
+        <ul class="nav-items">
+            <img src="../images/logopic.jpg" alt="Logo Pic" class="nav-logo">
+
+            <li class="nav-links"><a href="../index.html">Home</a></li>
+            <li class="nav-links"><a href="./htmls/menu.html">Menu</a></li>
+            <li class="nav-links"><a href="./htmls/cart.html">Cart</a></li>
+            <li class="nav-links"><a href="./htmls/order.html">Orders</a></li>
+
+        </ul>
+        <div class="right">
+            <a href="./htmls/signin.html" class="login">Login</a>
+            <a href="./htmls/signin.html" class="login">Register</a>
+            <a href="#" class="user_icon"><i class="fa-solid fa-user"></i></a>
+
+        </div>
+        </div>
     </nav>
 
     <div class="formbody">
@@ -54,33 +62,33 @@
             <center>
                 <div class="title">Sign in</div>
             </center>
-            <% if (session.getAttribute("msg") !=null) { %>
-                <br>
-                <h3 class="msg">
-                    <%=session.getAttribute("msg")%>
-                </h3>
-                <% session.removeAttribute("msg"); } %>
-                    <br>
 
-                    <form action="signin_servlet.jsp" method="post">
-                        <div class="user-details">
-                            <div class="input-box">
-                                <span class="details">User Name</span> <input type="text" name="username"
-                                    placeholder="Enter your password" minlength="5" maxlength="25" required>
-                            </div>
-                            <div class="input-box">
-                                <span class="details">Password</span> <input type="password" name="password"
-                                    placeholder="Enter your password" minlength="8" maxlength="25" required>
-                            </div>
-                        </div>
-                        <br> <br>
-                        <div class="button">
-                            <input type="submit" name="submitto" value="Login">
-                        </div>
-                        <div class="reset">
-                            <input type="reset" name="resetto" value="Reset">
-                        </div>
-                    </form>
+            <br>
+            <h3 class="msg">
+
+            </h3>
+
+            <br>
+
+            <form action="signin_servlet.jsp" method="post">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">User Name</span> <input type="text" name="username"
+                            placeholder="Enter your password" minlength="5" maxlength="25" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Password</span> <input type="password" name="password"
+                            placeholder="Enter your password" minlength="8" maxlength="25" required>
+                    </div>
+                </div>
+                <br> <br>
+                <div class="button">
+                    <input type="submit" name="submitto" value="Login">
+                </div>
+                <div class="reset">
+                    <input type="reset" name="resetto" value="Reset">
+                </div>
+            </form>
         </div>
     </div>
 
