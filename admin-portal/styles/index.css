@@ -38,6 +38,19 @@
 
 }
 
+.card-links {
+    text-decoration: none;
+    color: #6c757d;
+    transition: 1s ease;
+    cursor: pointer;
+    /* color: transparent; */
+
+}
+
+.card p :hover {
+    color: blue;
+}
+
 .tilter {
 
 
