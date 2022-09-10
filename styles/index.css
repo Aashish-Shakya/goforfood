@@ -24,7 +24,12 @@
     /* gap: 30px; */
     background-color: black;
     width: 100%;
-    position: relative;
+    /* position: relative; */
+    position: fixed;
+    overflow: hidden;
+    z-index: 100;
+
+
 
 }
 
@@ -37,6 +42,7 @@
     list-style: none;
     /* position: absolute;
     left: 500px; */
+
 }
 
 
@@ -97,7 +103,7 @@
 .background {
 
 
-    background-image: url(/images/alter.jpg);
+    background-image: url(../images/alter.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     /* background-position: center;
