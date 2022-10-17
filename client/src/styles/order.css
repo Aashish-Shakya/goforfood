@@ -1,0 +1,100 @@
+.order-details {
+    border: 1.4px solid black;
+    padding: 5px 8px;
+    background-color: rgba(189, 182, 182, 0.089);
+    width: 260px;
+    border-radius: 8px;
+}
+
+.card-link {
+    background-color: rgba(0, 0, 255, 0.788);
+    color: white;
+    padding: 7px 9px;
+    font-size: 16px;
+    border-radius: 6px;
+}
+
+.card-link:hover {
+    color: white;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.card-header {
+    height: 40%;
+    margin: 25px;
+    padding: 10px 10px;
+}
+
+.table {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+
+.table1 {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.table {
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(189, 182, 182, 0.089);
+    border: 2px solid grey;
+}
+
+.head {
+    font-size: 4x;
+}
+
+table,
+tr {
+    margin: 20px 20px;
+}
+
+.table1 th {
+    font-family: 'Rowdies', cursive;
+    font-size: 20px;
+}
+
+td.address {
+    display: in;
+    flex-wrap: wrap;
+}
+
+th,
+tr,
+td {
+    text-align: center;
+    max-width: fit-content;
+}
+
+.image1 {
+    height: 40px;
+    width: 50px;
+    border-radius: 60px;
+}
+
+div#accordion {
+    min-height: 210px;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'FontAwesome';
+}
+
+.footer {
+    margin-top: 230px;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

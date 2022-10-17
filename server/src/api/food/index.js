@@ -1,6 +1,13 @@
 import express from "express";
 import { FoodModel } from '../../database/allModels'
 import { validateCategory, validateId } from "../../validation/common.validation";
+// import cloudinary from "../../utils/cloudinary"
+import { v2 as cloudinary } from 'cloudinary'
+
+import path from 'path';
+import fs from 'fs'
+// const fs = require("fs");
+
 
 const Router = express.Router();
 
@@ -46,6 +53,12 @@ Router.get("/:_id", async (req, res) => {
 //     }
 // })
 
+cloudinary.config({
+    cloud_name: 'dm5krjksw',
+    api_key: '723413961412168',
+    api_secret: 'y37L0wrWgOYLXRbGuZtqU6p2Tmc',
+    secure: false
+});
 /**
  * Route    :-  /:_id
  * Desc     :- Create New Food Item
@@ -54,22 +67,54 @@ Router.get("/:_id", async (req, res) => {
  * Method   :- Post
  * 
  */
+
 Router.post(
-    "/new",
+    "/new/image",
     // passport.authenticate("jwt", { session: false }),
     async (req, res) => {
         try {
+            const { name, description, isVeg, category, photos, price } = req.body
 
-            // const { reviewData } = req.body;
+            const result = await cloudinary.uploader.upload(
+                photos,
+                {
 
-            // const review = await ReviewModel.create({ ...reviewData, user: _id });
+                    folder: "dish",
 
-            return res.json({ review });
+                }, (err, image) => {
+                    if (err) {
+                        console.log(err);
+                    }
+                    console.log("File Uploaded");
+
+
+                }
+            );
+
+
+            const dish = await FoodModel.create({
+                name,
+                description,
+                isVeg,
+                category,
+                photos: `${cloudinary.url(result.public_id + ".jpg")}`,
+                price
+
+
+            });
+
+            return res.status(200).json({
+                data: {
+                    dish
+                },
+            });
+
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
     }
 );
+
 
 
 //   <---------------Home work- ---------->
