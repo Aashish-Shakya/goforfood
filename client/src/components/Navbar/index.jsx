@@ -1,6 +1,6 @@
 import React from "react";
 
-
+import { Link } from "react-router-dom";
 
 
 
@@ -42,11 +42,12 @@ const LargeNav = ({ user, admin }) => {
                 <div class="right">
                     {user?.fullName ? (
                         <>
-                            <a href="./htmls/signin.html" class="login">Login</a>
+                            <a href="#" class="login">Logout</a>
                         </>
                     ) : (
                         <>
-                            <a href="./htmls/register.html" class="login">Register</a>
+                            <a href="/signin" class="login">SignIn</a>
+                            <a href="/signup" class="login">SignUp</a>
                         </>
                     )}
                         // <a href="#" class="user_icon"><i class="fa-solid fa-user"></i></a>
@@ -70,7 +71,7 @@ const Navbar = () => {
     // const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const user = {
-        fullName: "Aditya",
+        // fullName: "Aditya",
     };
     const admin = {
 

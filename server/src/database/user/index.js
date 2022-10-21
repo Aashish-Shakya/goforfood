@@ -9,11 +9,19 @@ const UserSchema = new mongoose.Schema(
         password: { type: String },
         address: [{ detail: { type: String }, for: { type: String } }],
         phoneNumber: [{ type: Number }],
+        role: { type: String, enum: ['user', 'admin'], default: 'user' },
+        // profilePicture:{type:String }
+
+
     },
     {
         timestamps: true,
     }
 );
+
+// UserSchema.virtual("fullName").get(function () {
+//     return `${this.firstName} ${this.lastName}`;
+// });
 
 // attachments
 UserSchema.methods.generateJwtToken = function () {

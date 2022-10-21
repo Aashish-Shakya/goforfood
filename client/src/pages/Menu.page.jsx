@@ -3,7 +3,9 @@ import MenupageLayout from '../layouts/Menupage.layout';
 
 const Menupage = () => {
     return (
-        <div>Menupage</div>
+        <>
+            <div></div>
+        </>
     )
 }
 

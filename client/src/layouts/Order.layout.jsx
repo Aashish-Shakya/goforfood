@@ -1,10 +1,10 @@
 import React from 'react'
-// import "../styles/order.css"
+
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-// import FoodTab from "../components/FoodTab";
 
+import orderCss from "../assets/styles/order.css"
 
 
 const Orderlayout = (Component) =>
@@ -101,7 +101,7 @@ const Orderlayout = (Component) =>
                                                         <td>
                                                             1
                                                         </td>
-                                                        <td class="image-box"><img src="../images/ggp.jfif" class="image1" /></td>
+                                                        <td class="image-box"><img src="https://res.cloudinary.com/dm5krjksw/image/upload/v1665828324/ggp_ut1tsz.jpg" class="image1" /></td>
                                                         <div class="info">
                                                             <td>
                                                                 <h6>
@@ -128,7 +128,7 @@ const Orderlayout = (Component) =>
                                                         <td>
                                                             1
                                                         </td>
-                                                        <td class="image-box"><img src="../images/ggp.jfif" class="image1" /></td>
+                                                        <td class="image-box"><img src="https://res.cloudinary.com/dm5krjksw/image/upload/v1665828324/ggp_ut1tsz.jpg" class="image1" /></td>
                                                         <div class="info">
                                                             <td>
                                                                 <h6>
@@ -155,7 +155,7 @@ const Orderlayout = (Component) =>
                                                         <td>
                                                             1
                                                         </td>
-                                                        <td class="image-box"><img src="../images/ggp.jfif" class="image1" /></td>
+                                                        <td class="image-box"><img src="https://res.cloudinary.com/dm5krjksw/image/upload/v1665828324/ggp_ut1tsz.jpg" class="image1" /></td>
                                                         <div class="info">
                                                             <td>
                                                                 <h6>

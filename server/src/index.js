@@ -14,12 +14,13 @@ import Auth from "./api/auth";
 import Food from "./api/food";
 import User from "./api/user";
 import Order from "./api/order";
+
 // Require the cloudinary library
 
-import { v2 as cloudinary } from 'cloudinary'
+// import { v2 as cloudinary } from 'cloudinary'
 
 
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0
+// process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 0
 dotenv.config();
 privateRouteConfig(passport);
 
@@ -37,6 +38,7 @@ goforfood.use("/auth", Auth);
 goforfood.use("/food", Food);
 goforfood.use("/user", User);
 goforfood.use("/order", Order);
+
 
 goforfood.use(fileUpload({
     debug: true,

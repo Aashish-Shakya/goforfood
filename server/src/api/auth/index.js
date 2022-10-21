@@ -23,12 +23,24 @@ Router.post("/signup", async (req, res) => {
 });
 Router.post("/signin", async (req, res) => {
     try {
+
         await ValidateSignin(req.body.credentials);
         const user = await UserModel.findByEmailAndPassword(req.body.credentials);
 
         const token = user.generateJwtToken();
-
-        return res.status(200).json({ token, status: "success" })
+        if (user.role === 'admin') {
+            return res.status(200).json({
+                message: "Admin Singin Successfully",
+                token,
+                user,
+                status: "success"
+            })
+        }
+        return res.status(200).json({
+            token,
+            user,
+            status: "success"
+        })
 
     } catch (error) {
         return res.status(500).json({ error: error.message });

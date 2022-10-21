@@ -2,6 +2,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 // import FoodTab from "../components/FoodTab";
+import menuIcon from "../assets/images/menu_2.png"
+import menuCss from "../assets/styles/menu.css"
 
 const MenupageLayout =
     (Component) =>
@@ -31,10 +33,10 @@ const MenupageLayout =
                             </ul>
                         </nav>
                     </div>
-                    <div class="menu-container">
+                    <div class="menu-container" >
                         <div class="menu--title">
 
-                            <img id="menuIcon" src="../images/menu_2.png" />
+                            <img id="menuIcon" src={menuIcon} />
                         </div>
 
                         {/* <!-- Menu --> */}
@@ -48,7 +50,7 @@ const MenupageLayout =
                                 <div class="menu--card-container">
 
                                     <div class="menu--card">
-                                        <div class="card--imgbx"><img src="../images/ggp.jfif" alt="menu-item" class="menu--item-image" />
+                                        <div class="card--imgbx"><img src="https://res.cloudinary.com/dm5krjksw/image/upload/v1665828324/ggp_ut1tsz.jpg" alt="menu-item" class="menu--item-image" />
                                         </div>
                                         <div class="contentBx">
                                             <h2 class="menu--item-title">Gol Gappe</h2>

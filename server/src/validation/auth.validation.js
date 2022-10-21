@@ -5,6 +5,7 @@ import { Schema } from 'mongoose';
 export const ValidateSignup = (userData) => {
     const Schema = joi.object({
         fullName: joi.string().min(5).required(),
+        role: joi.string(),
         email: joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
         password: joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
         address: joi.array().items(joi.object({ details: joi.string(), for: joi.string() })),
