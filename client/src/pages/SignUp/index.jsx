@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import signUpCss from "../../assets/styles/signUp.module.css"
@@ -6,7 +6,40 @@ import cx from "classnames"
 import fbLogo from "../../assets/images/fb.jfif"
 import instaLogo from "../../assets/images/instagram.png"
 import googleLogo from "../../assets/images/google.jfif"
-const SignUp = () => {
+
+
+// redux
+import { useDispatch } from "react-redux";
+import { signUp } from "../../redux/reducers/auth/auth.action";
+import { getMySelf } from "../../redux/reducers/user/user.action";
+
+const SignUp = ({ isOpen, setIsOpen }) => {
+    const [userData, setUserData] = useState({
+        email: "",
+        password: "",
+        fullName: "",
+    });
+
+    const handleChange = (e) => {
+        setUserData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    };
+
+    const closeModal = () => {
+        setIsOpen(false);
+    };
+
+    const dispatch = useDispatch();
+
+    const submit = async () => {
+        await dispatch(signUp(userData));
+        await dispatch(getMySelf());
+        closeModal();
+        setUserData({ email: "", password: "", fullName: "" });
+    };
+
+    const googleSignUp = () =>
+        (window.location.href = `${process.env.REACT_APP_CLIENT_URL}/auth/google`);
+
     return (
         <>
             <Navbar />
@@ -33,29 +66,34 @@ const SignUp = () => {
                                 </li>
                             </ul>
                         </div>
-                        <form action="signup_servlet.jsp" method="post">
+                        <form  >
                             <div class={signUpCss.userdetails}>
                                 <div class={signUpCss.inputbox}>
-                                    <span class={signUpCss.details}>First Name</span>
-                                    <input type="text" name="fname" placeholder="Enter your first name" minlength="2"
-                                        maxlength="20" required />
+                                    <span class={signUpCss.details}>FullName</span>
+                                    <input type="text" id="fullName" name="fname" value={userData.fullName}
+                                        onChange={handleChange}
+                                        placeholder="John Doe"
+                                        required />
                                 </div>
-                                <div class={signUpCss.inputbox}>
+                                {/* <div class={signUpCss.inputbox}>
                                     <span class={signUpCss.details}>Last Name</span>
                                     <input type="text" name="lname" placeholder="Enter your last name" minlength="2"
                                         maxlength="14" required />
-                                </div>
-                                <div class={signUpCss.inputbox}>
+                                </div> */}
+                                {/* <div class={signUpCss.inputbox}>
                                     <span class={signUpCss.details}>User Name</span>
                                     <input type="text" name="username" placeholder="Enter your password" minlength="5"
                                         maxlength="25" required />
-                                </div>
+                                </div> */}
                                 <div class={signUpCss.inputbox}>
-                                    <span class={signUpCss.details}>Email id</span>
-                                    <input type="text" name="email" placeholder="Enter your email id" minlength="4"
-                                        maxlength="25" required />
+                                    <span class={signUpCss.details}>Email</span>
+                                    <input type="text" name="email" id="email"
+                                        value={userData.email}
+                                        onChange={handleChange}
+                                        placeholder="user@email.com"
+                                        required />
                                 </div>
-                                <div class={signUpCss.genderdetails}>
+                                {/* <div class={signUpCss.genderdetails}>
                                     <span class={signUpCss.gendertitle}>Gender</span>
                                     <br />
                                     <input type="radio" name="gender" id="dot-1" value="male" />
@@ -70,6 +108,7 @@ const SignUp = () => {
                                     </label>
                                     <input type="radio" name="gender" id="dot-3" value="other" />
                                     <label for="dot-3">
+                                    
                                         <span class={cx(signUpCss.dot, signUpCss.three)}></span>
                                         <span class={signUpCss.gender}>Other</span>
                                     </label>
@@ -79,33 +118,45 @@ const SignUp = () => {
 
 
                                     </div>
-                                </div>
-                                <div class={signUpCss.inputbox}>
+                                </div> */}
+                                {/* <div class={signUpCss.inputbox}>
                                     <span class={signUpCss.details}>Mobile Number</span>
-                                    <input type="number" name="mobile" placeholder="Enter your mobile number" minlength="10"
-                                        maxlength="10" required />
-                                </div>
-                                <div class={signUpCss.inputbox}>
-                                    <span class={signUpCss.details}>Address</span>
-                                    <input name="address" placeholder="Enter your address" minlength="5" maxlength="50"
+                                    <input type="number"
+                                        name="mobile"
+                                        id='phoneNumber'
+                                        value={userData.phoneNumber}
+                                        onChange={handleChange}
+                                        placeholder="123456789"
                                         required />
-                                </div>
+                                </div> */}
+                                {/* <div class={signUpCss.inputbox}>
+                                    <span class={signUpCss.details}>Address</span>
+                                    <input type="array"
+                                        name="address"
+                                        id="address"
+                                        value={userData.address}
+                                        onChange={handleChange}
+                                        placeholder="Enter your address"
+                                        required />
+                                </div> */}
                                 <div class={signUpCss.inputbox}>
                                     <span class={signUpCss.details}>Password</span>
-                                    <input type="password" id="pwd" name="password" placeholder="Enter your password"
-                                        minlength="8" maxlength="25" required />
+                                    <input type="password"
+                                        id="password"
+                                        value={userData.password}
+                                        onChange={handleChange}
+                                        placeholder="*********" required />
                                 </div>
                                 <div class={signUpCss.inputbox}>
                                     <span class={signUpCss.details}>Confirm Password</span>
                                     <input type="password" id="cpwd" name="caddress" placeholder="Confirm your password"
-                                        minlength="8" maxlength="25" required />
+                                        required />
                                 </div>
                             </div >
 
                             <center>
-                                <div class={signUpCss.button}>
-                                    <label style={{ color: 'red' }} id="test"></label><br />
-                                    <input type="submit" onclick="return check()" name="submitto" value="Register" />
+                                <div class={signUpCss.button} onClick={submit}>
+                                    SignUp
                                 </div>
                                 <div class={signUpCss.reset}>
                                     <input type="reset" name="resetto" value="Reset" />

@@ -37,20 +37,20 @@ const Home = () => {
 
             <Container>
                 <Container>
-                    <Row className='mt-5'>
+                    <Row classNameName='mt-5'>
                         <Col md={4}>
-                            <Link to="/users" class="text-decoration-none"> <Card >
-                                <Card.Body class="text-center">
-                                    <div class="tilter">
-                                        <div class="container">
-                                            <Card.Img class="img-fluid" variant="top" src={teams} />
+                            <Link to="/users" className="text-decoration-none"> <Card >
+                                <Card.Body className="text-center">
+                                    <div className="tilter">
+                                        <div className="container">
+                                            <Card.Img className="img-fluid" variant="top" src={teams} />
 
 
-                                            {/* <img class="img-fluid" src=" " alt="" /> */}
+                                            {/* <img className="img-fluid" src=" " alt="" /> */}
 
                                         </div>
-                                        <p class="text-dark display-4">12</p>
-                                        <p class="display-4 text-muted">USERS</p>
+                                        <p className="text-dark display-4">12</p>
+                                        <p className="display-4 text-muted">USERS</p>
                                     </div>
                                 </Card.Body>
 
@@ -63,17 +63,17 @@ const Home = () => {
                         <Col md={4}>
 
                             <Card onClick={handleShow} >
-                                <Card.Body class="text-center">
-                                    <div class="tilter">
-                                        <div class="container">
-                                            <Card.Img class="img-fluid" variant="top" src={dish} />
+                                <Card.Body className="text-center">
+                                    <div className="tilter">
+                                        <div className="container">
+                                            <Card.Img className="img-fluid" variant="top" src={dish} />
 
 
-                                            {/* <img class="img-fluid" src=" " alt="" /> */}
+                                            {/* <img className="img-fluid" src=" " alt="" /> */}
 
                                         </div>
-                                        <p class="text display-4">12</p>
-                                        <p class="display-4 text-muted">Dishes</p>
+                                        <p className="text display-4">12</p>
+                                        <p className="display-4 text-muted">Dishes</p>
                                     </div>
                                 </Card.Body>
 
@@ -84,19 +84,19 @@ const Home = () => {
 
                         </Col>
                         <Col md={4}>
-                            <Link to="/orders" class="text-decoration-none">
+                            <Link to="/orders" className="text-decoration-none">
                                 <Card  >
-                                    <Card.Body class="text-center">
-                                        <div class="tilter">
-                                            <div class="container">
-                                                <Card.Img class="img-fluid" variant="top" src={order} />
+                                    <Card.Body className="text-center">
+                                        <div className="tilter">
+                                            <div className="container">
+                                                <Card.Img className="img-fluid" variant="top" src={order} />
 
 
-                                                {/* <img class="img-fluid" src=" " alt="" /> */}
+                                                {/* <img className="img-fluid" src=" " alt="" /> */}
 
                                             </div>
-                                            <p class="text-dark display-4">12</p>
-                                            <p class="display-4 text-muted">Orders</p>
+                                            <p className="text-dark display-4">12</p>
+                                            <p className="display-4 text-muted">Orders</p>
                                         </div>
                                     </Card.Body>
 

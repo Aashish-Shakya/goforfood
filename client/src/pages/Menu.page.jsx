@@ -1,13 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MenupageLayout from '../layouts/Menupage.layout';
 
+
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import { getFood } from "../redux/reducers/food/food.action";
+
+
+
+
 const Menupage = () => {
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getFood());
+    }, []);
+
+
     return (
         <>
-            <div></div>
+
         </>
     )
 }
 
 
-export default MenupageLayout(Menupage);
+export default MenupageLayout(Menupage)

@@ -32,6 +32,25 @@ Router.get(
     }
 );
 
+
+Router.get("/admin/all", passport.authenticate("jwt", { session: false }), async (req, res) => {
+    try {
+        // const { _id } = req.params;
+
+        const orderList = await OrderModel.find();
+
+        //this if block not woroking day-58 17:45
+        if (!orderList) {
+            return res.status(404).json({ error: "Order not found" });
+        }
+
+        // const { fullName, role } = getUser;
+        return res.json({ orderList });
+
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+});
 /**
  * Route     /new
  * Des       Add new order

@@ -19,6 +19,16 @@ const Router = express.Router();
  * Method   :- Get
  * 
  */
+Router.get("/", async (req, res) => {
+    try {
+        const foodList = await FoodModel.find();
+        return res.json({ foodList });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+
+    }
+})
+
 
 Router.get("/:_id", async (req, res) => {
     try {

@@ -1,0 +1,4 @@
+export const GET_ORDER = "GET_ORDER"; // GET GENERAL USER DETAILS FOR REVIEW
+export const GET_ALL_ORDER = "GET_ALL_ORDER";
+// export const AUTH_USER = "AUTH_USER";
+

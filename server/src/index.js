@@ -3,10 +3,14 @@ import dotenv from 'dotenv';
 import passport from 'passport';
 import multer from 'multer'
 import path from 'path'
-import fileUpload from 'express-fileupload'
+// import fileUpload from 'express-fileupload'
 //Private route authrization config
+import session from "express-session";
+
 import privateRouteConfig from "./config/route.config";
 
+import cors from "cors"
+import helmet from "helmet"
 
 //Db connection 
 import ConnectDB from './database/connection'
@@ -26,7 +30,13 @@ privateRouteConfig(passport);
 
 const goforfood = express();
 
+goforfood.use(cors({ origin: "http://localhost:3000" }));
+goforfood.use(helmet());
+
 goforfood.use(express.json());
+goforfood.use(session({ secret: process.env.JWTSECRET }));
+goforfood.use(passport.initialize());
+goforfood.use(passport.session());
 
 goforfood.get("/", (req, res) => {
     res.json({
@@ -40,15 +50,15 @@ goforfood.use("/user", User);
 goforfood.use("/order", Order);
 
 
-goforfood.use(fileUpload({
-    debug: true,
-    useTempFiles: true,
-    tempFileDir: path.join(__dirname, "./temp"),
-}))
+// goforfood.use(fileUpload({
+//     debug: true,
+//     useTempFiles: true,
+//     tempFileDir: path.join(__dirname, "./temp"),
+// }))
 
 
 
-const PORT = 6000;
+const PORT = 4000;
 
 goforfood.listen(PORT, () => {
     ConnectDB()

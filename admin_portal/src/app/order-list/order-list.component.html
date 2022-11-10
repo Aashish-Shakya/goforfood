@@ -1,25 +1,25 @@
  
 <br><br>
-<h2 class="OD">OrderDetails</h2>
+<h2 className="OD">OrderDetails</h2>
 <br><br>
 <!-- <h1>Total Order{{this.countOrder}}</h1> -->
-<div class="container">
+<div className="container">
 
-    <div class="card">
+    <div className="card">
 
 
-        <div class="card-body">
+        <div className="card-body">
 
-            <table class="table sticky table-hover">
-                <thead class="thead">
-                    <tr class="text-muted h3">
-                        <th scope="col" class="head">S.No</th>
-                        <th scope="col" class="head">BILL_NO</th>
-                        <th scope="col" class="head">USERNAME</th>
-                        <th scope="col" class="head">TOTAL_AMOUNT</th>
-                        <th scope="col" class="head">ADDRESS</th>
-                        <th scope="col" class="head">TRANSACTION_ID</th>
-                        <th scope="col" class="head">STATUS</th>
+            <table className="table sticky table-hover">
+                <thead className="thead">
+                    <tr className="text-muted h3">
+                        <th scope="col" className="head">S.No</th>
+                        <th scope="col" className="head">BILL_NO</th>
+                        <th scope="col" className="head">USERNAME</th>
+                        <th scope="col" className="head">TOTAL_AMOUNT</th>
+                        <th scope="col" className="head">ADDRESS</th>
+                        <th scope="col" className="head">TRANSACTION_ID</th>
+                        <th scope="col" className="head">STATUS</th>
                    
                     </tr>
                 </thead>
@@ -29,7 +29,7 @@
 
                     <!-- {{billList}} -->
                     <!-- <button (click)="demo()">Test</button> -->
-                    <tr *ngFor="let bill of orders; let i = index" class="text-black h4">
+                    <tr *ngFor="let bill of orders; let i = index" className="text-black h4">
 
                         <td>{{i+1}}</td>
 
@@ -56,13 +56,13 @@
 
 <br><br>
 
-<!-- <a href="#deleteModal" class="trigger-btn" data-toggle="modal"> -->
+<!-- <a href="#deleteModal" className="trigger-btn" data-toggle="modal"> -->
 
 
 
 
-<div class="float-end">
-    <a href="#" class="button glow-button">Back To Home</a>
+<div className="float-end">
+    <a href="#" className="button glow-button">Back To Home</a>
 </div>
 <br><br><br>
 <!-- <h1>..</h1> -->

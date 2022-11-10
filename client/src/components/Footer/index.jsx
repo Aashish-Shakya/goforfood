@@ -26,11 +26,11 @@ const LargeFoot = () => {
                         <a href="#"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                     <div class="footer-links">
-                        <a href="index.html" class="links">Home</a>
-                        <a href="./htmls/service.html" class="links">Service</a>
-                        <a href="./htmls/aboutus.html" class="links">About Us</a>
-                        <a href="./htmls/gallery.html" class="links">Galery</a>
-                        <a href="./htmls/contact.html" class="links">Contact Us</a>
+                        <a href="/" class="links">Home</a>
+                        <a href="/services" class="links">Service</a>
+                        <a href="/aboutus" class="links">About Us</a>
+                        <a href="/gallery" class="links">Galery</a>
+                        <a href="/contactus" class="links">Contact Us</a>
 
                     </div>
 

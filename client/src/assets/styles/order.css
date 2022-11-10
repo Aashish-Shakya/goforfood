@@ -19,13 +19,15 @@
 }
 
 .container {
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    display: flex;
+    flex-direction: column;
 }
 
 .card-header {
     height: 40%;
     margin: 25px;
-    padding: 10px 10px;
+    /* padding: 10px 10px; */
 }
 
 .table {

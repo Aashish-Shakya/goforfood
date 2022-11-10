@@ -11,14 +11,15 @@ const Router = express.Router();
  * Access    Private
  * Method    GET
  */
+
 Router.get(
     "/",
     passport.authenticate("jwt", { session: false }),
     async (req, res) => {
         try {
-            const { email, fullName, phoneNumber, address } = req.user;
+            const { email, fullName, phoneNumber, address, role } = req.user;
 
-            return res.json({ user: { email, fullName, phoneNumber, address } });
+            return res.json({ user: { email, fullName, phoneNumber, address, role } });
         } catch (error) {
             return res.status(500).json({ error: error.message });
         }
@@ -32,6 +33,7 @@ Router.get(
  * Access    Public
  * Method    GET
  */
+
 Router.get("/:_id", async (req, res) => {
     try {
         const { _id } = req.params;
@@ -43,9 +45,28 @@ Router.get("/:_id", async (req, res) => {
             return res.status(404).json({ error: "User not found" });
         }
 
-        const { fullName } = getUser;
+        const { fullName, role } = getUser;
 
-        return res.json({ user: { fullName } });
+        return res.json({ user: { fullName, role } });
+    } catch (error) {
+        return res.status(500).json({ error: error.message });
+    }
+});
+
+Router.get("/admin/all", passport.authenticate("jwt", { session: false }), async (req, res) => {
+    try {
+        // const { _id } = req.params;
+
+        const userList = await UserModel.find();
+
+        //this if block not woroking day-58 17:45
+        if (!userList) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        // const { fullName, role } = getUser;
+        return res.json({ userList });
+
     } catch (error) {
         return res.status(500).json({ error: error.message });
     }
@@ -67,7 +88,7 @@ Router.put(
             const { _id } = req.params;
             const { userData } = req.body;
 
-            userData.password = undefined;
+            // userData.password = undefined;
 
             const updateUserData = await UserModel.findByIdAndUpdate(
                 _id,
@@ -85,7 +106,28 @@ Router.put(
         }
     }
 );
+Router.delete(
+    "/delete/:id",
+    async (req, res) => {
+        try {
+            const { user } = req;
+            const { id } = req.params;
 
+            const data = await UserModel.findOneAndDelete({
+                _id: id,
+
+            });
+
+            if (!data) {
+                return res.json({ message: "User was not deleted" });
+            }
+
+            return res.json({ message: "Successfully deleted the User.", data });
+        } catch (error) {
+            return res.status(500).json({ error: error.message });
+        }
+    }
+);
 export default Router;
 
 //validate user data

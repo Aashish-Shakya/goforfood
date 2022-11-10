@@ -25,6 +25,9 @@ body {
 
 }
 
+.login {
+    cursor: pointer;
+}
 
 .container {
     max-width: 700px;
@@ -104,6 +107,9 @@ form .userdetails .inputbox {
 form .button {
     height: 45px;
     margin: 45px 0;
+    display: flex;
+
+    text-align: center;
 }
 
 form .button input {
@@ -121,6 +127,24 @@ form .button input {
 }
 
 form .button input:hover {
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+}
+
+form .button div {
+    height: 100%;
+    width: 70%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 15%;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+
+form .button div:hover {
     background: linear-gradient(-135deg, #71b7e6, #9b59b6);
 }
 
