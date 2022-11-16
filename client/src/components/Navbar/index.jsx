@@ -91,26 +91,19 @@ const LargeNav = ({
 
             ) : (
                 <div className="w-full hidden lg:flex navbar">
-
-                    {/* <!-- <div class="item"> --> */}
-                    <Link to="/">
+                    <h4 class="title">GO 4 FOOD</h4>
 
 
-                    </Link>
                     <ul class="nav-items">
                         <div className="nav-logo"></div>
-                        {/* <img src="../public/image/logopic.jpg" alt="Logo Pic" class="nav-logo" /> */}
+                        {/* <img src="" class="nav-logo" /> */}
 
                         <li class="nav-links"><a onClick={() => navigate("/")}  >Home</a></li>
                         <li class="nav-links"><a onClick={() => navigate("/menu")} >Menu</a></li>
                         <li class="nav-links"><a onClick={() => navigate("/cart")} >Cart</a></li>
                         <li class="nav-links"><a onClick={() => navigate("/order")} >Orders</a></li>
 
-                        {/* {admin?.pass ? (
-                        <li class="nav-links"><a href="/admin">AdminPortal</a></li>
-                    ) : (
-                        <li class="nav-links"><a href="/about">About</a></li>
-                    )} */}
+
 
                     </ul>
 
@@ -146,7 +139,7 @@ const LargeNav = ({
                                 </span>
 
                                 {isDropdownOpen && (
-                                    <div className=" popup absolute shadow-lg py-3 -bottom-24 -right-0 w-36 z-20 flex flex-col gap-2 bg-red border border-gray-200">
+                                    <div className=" popup absolute shadow-lg py-3 -bottom-24 -right-0 w-36 z-20 flex flex-col gap-2 bg-red border border-gray-200 text-black justify-center " >
                                         <Link to="/signin">
                                             <button  >Sign In</button>
                                         </Link>

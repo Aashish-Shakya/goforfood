@@ -1,15 +1,61 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import Button from 'react-bootstrap/esm/Button';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFood } from '../../../redux/reducers/food/food.action';
+import { addFood, getFood } from '../../../redux/reducers/food/food.action';
 import DishList from '../../components/Dish/DishList'
-
+import Modals from "../../components/Modal/AddDish.modal"
 // import "./dish.css"
 const DishEditpage = () => {
+    // https://res.cloudinary.com/dm5krjksw/image/upload/v1667646844/dish/ggp_quhark.jpg
+    // const [dishData, setDishData] = useState({
+    //     name: "",
+    //     description: "",
+    //     isVeg: "",
+    //     category: "",
+    //     photos: "",
+    //     price: "",
+
+
+
+    // });
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+
+    // const handleChange = (e) => {
+    //     setDishData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+    // };
 
     const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(getFood());
-    }, []);
+
+
+
+
+    // const closeModal = () => {
+    // setIsOpen(false);
+    // };
+
+    // useEffect(() => {
+    //     dispatch(getFood());
+    // }, []);
+
+
+    // const submit = async () => {
+    //     await dispatch(addFood(dishData));
+
+    //     closeModal();
+    //     setDishData({
+    //         name: "",
+    //         description: "",
+    //         isVeg: "",
+    //         category: "",
+    //         photos: "",
+    //         price: "",
+    //     });
+    // };
 
 
     // const foodList = useSelector((globalState) => globalState.food.foods)
@@ -18,10 +64,12 @@ const DishEditpage = () => {
     return (
         <>
 
-            <br /><br />
-            <h2 class="OD">Dish Details</h2>
-            <br /><br />
-            <div class="container">
+
+            <h2 class="text-8xl text-center pb-12 pt-3">Dish Details</h2>
+            <div class="text-center pb-5 " >
+                <Button variant="primary" style={{ background: "rgb(124 58 237)" }} onClick={handleShow}> ADD DISH </Button>
+            </div>
+            <div class="container display-block shadow-lg rounded-3xl ">
 
                 <div class="card">
 
@@ -38,74 +86,14 @@ const DishEditpage = () => {
 
             {/* <!-- <a href="#deleteModal" class="trigger-btn" data-toggle="modal"> --> */}
 
-
-
-            <ng-template >
-                {/* <!-- Modal->Add category --> */}
-                <div class=" " id="add-category" aria-hidden="true" aria-labelledby="add-category" tabindex="-1">
-                    {/* <!-- <div class="modal-dialog modal-dialog-centered"> */}
-                    {/* <div class="modal-content"> --> */}
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalToggleLabel2">EDIT PRODUCT</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"  ></button>
-                    </div>
-                    <div class="modal-body">
-                        <form action="#" >
-                            <div class="form-group">
-                                <input type="text" id="dishCat" class="form-control" name="dishCat" placeholder="Enter Category" value="{{dish?.category}}" required />
-                                <br />
-                                <input type="text" id="dishTitle" class="form-control" name="catTitle" placeholder="Enter Dish Name" value="{{dish?.name}}" required />
-                                <br />
-                                <input type="text" id="dishImg" class="form-control" name="dishImg" placeholder="Enter The Url of Image" value="{{dish?.image_url}}" required />
-                                <br />
-                                <input type="text" id="dishPrice" class="form-control" name="dishPrice" placeholder="Enter Original Price" value="{{dish?.price}}" required />
-                                <br />
-                                <input type="text" class="form-control" id="dishDP" name="dishDP" placeholder="Enter Discounted Price" value="{{dish?.discount}}" required />
-
-                                <br />
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn btn-primary" data-bs-target="#preview" data-bs-toggle="modal">Preview</button>
-                        <button class="btn btn-primary" data-bs-target="#DISHES" data-bs-toggle="modal" >Back to first</button>
-                    </div>
-                </div>
-                {/* <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#DISHES"  >  -->
-    <!-- </div>
-          </div> --> */}
-            </ng-template>
-
-
-            {/* <!-- Modal HTML --> */}
-            <ng-template >
-                {/* <!-- <div id="deleteModal" class=""> --> */}
-                <div class="modal-dialog modal-confirm">
-                    <div class="modal-content">
-                        <div class="modal-header flex-column">
-                            <div class="icon-box">
-                                <i class="material-icons">&#xE5CD;</i>
-                            </div>
-                            <h4 class="modal-title w-100">Are you sure?</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Do you really want to delete these records? This process cannot be undone.</p>
-                        </div>
-                        <div class="modal-footer justify-content-center">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" >Cancel</button>
-                            <button type="button" class="btn btn-danger" >Delete</button>
-                        </div>
-                    </div>
-                </div>
-                {/* <!-- </div>      --> */}
-
-            </ng-template>
-
             <div class="float-end">
                 <a href="/home" class="button glow-button">Back To Home</a>
             </div>
             <br /><br /><br />
+
+
+            <Modals show={show} onHide={handleClose} />
+
             {/* <!-- <h1>..</h1> --></br> */}
         </>
     )

@@ -7,15 +7,24 @@ import OrderList from "../components/Order/OrderList";
 import OrderContainer from "../components/Order/OrderTable";
 import Orderlayout from "../layouts/Order.layout";
 
+import cx from "classnames"
+import orderCss from "../assets/styles/order.module.css"
 // Layout
 
 import { getOrder } from "../redux/reducers/order/order.action";
 import { getAllUser } from "../redux/reducers/user/user.action";
 
+import Button from 'react-bootstrap/Button';
+import Collapse from 'react-bootstrap/Collapse';
+
+
+
+
 const Order = () => {
+    const [open, setOpen] = useState(false);
     const user = useSelector((globalState) => globalState.user);
 
-    // const orderList = useSelector((globalState) => globalState.order) || {};
+    const orderList = useSelector((globalState) => globalState.order.orders) || {};
 
     // const orderData = Object.values(orderList)
 
@@ -24,7 +33,7 @@ const Order = () => {
 
 
     // console.log(order.orders.orderDetails)
-    // console.log(user)
+    // console.log(orderList)
 
     const dispatch = useDispatch();
 
@@ -40,33 +49,36 @@ const Order = () => {
         <>
 
 
-            <div class="body">
+            <div class={orderCss.body}>
+
                 <br />
                 {user?.fullName ? (
 
-                    <div class="container">
-                        <h2 class="order-details">Order Details</h2>
-                        <div id="accordion">
+                    <div class={orderCss.container}>
+                        <div class={orderCss.orderDetails}>Order Details</div>
+                        <div id={orderCss.accordion}>
 
 
                             {/* <!-- <h1 style="font-size: xxx-large">NO ORDERS YET.</h1> --> */}
 
 
 
-                            <div class="card">
-                                <div class="card-header">
+                            <div class={orderCss.card}>
+                                <div class={orderCss.cardHeader}>
                                     {/* <!-- <center> --> */}
-                                    <table class="table1">
+                                    <table class={orderCss.table1}>
                                         <thead>
                                             <tr>
-                                                <th scope="col">Bill No</th>
-                                                <th scope="col">TRX ID</th>
-                                                <th scope="col">Total Amount</th>
-                                                <th scope="col">Date & Time</th>
-                                                <th scope="col">Address</th>
-                                                <th scope="col">Status</th>
-                                                <th><a class="card-link" data-toggle="collapse" href="#orders"> More Details
-                                                    <i class="fa fa-angle-down" style={{ fontSize: "25px" }}  ></i></a>
+                                                {/* <th scope="col">Bill No</th> */}
+                                                <th  >TRX ID</th>
+                                                <th >Total Amount</th>
+                                                <th  >Date & Time</th>
+                                                {/* <th >Address</th> */}
+                                                <th  >Status</th>
+                                                <th><Button class={orderCss.cardLink} onClick={() => setOpen(!open)} aria-controls="toggle-Orders" aria-expanded={open}> More Details
+
+                                                </Button>
+
                                                 </th>
                                             </tr>
                                         </thead>
@@ -75,30 +87,41 @@ const Order = () => {
 
 
 
+                                            <tr>
+                                                <td>{orderList.orderDetails[0].razorpay_payment_id}</td>
+                                                <td>{orderList.orderDetails[0].itemTotal}</td>
+                                                <td>{orderList.createdAt}</td>
+                                                <td>{orderList.orderDetails[0].status}</td>
 
+                                                {/* <OrderList /> */}
 
-                                            <OrderList />
-
-
+                                            </tr>
                                         </tbody>
 
                                     </table>
                                     {/* <!-- </center>  --> */}
                                 </div>
-                                <div id="orders" class="collapse hide" data-parent="#accordion">
-                                    <div class="card-body">
+
+
+
+                                {/* <Collapse in={open}> */}
+
+
+
+                                <div id="toggle-Orders"  >
+                                    <div class={orderCss.cardBody}>
                                         {/* <!-- <center> --> */}
-                                        <table class="table">
+                                        <table class={orderCss.table}>
                                             <thead>
                                                 <tr>
-                                                    <th scope="col" class="head">S.No</th>
-                                                    <th scope="col" class="head">Product
+                                                    <th scope="col" class={orderCss.head}>S.No</th>
+                                                    <th scope="col" class={orderCss.head}>Product
                                                     </th>
-                                                    <th scope="col" class="head">Name</th>
-                                                    <th scope="col" class="head">Quantity
+                                                    <th scope="col" class={orderCss.head}>Name</th>
+                                                    <th scope="col" class={orderCss.head}>Quantity
                                                     </th>
-                                                    <th scope="col" class="head">Price</th>
-                                                    <th scope="col" class="head">Cost</th>
+                                                    {/* <th scope="col" class={orderCss.head}>Price</th>
+                                                    <th scope="col" class={orderCss.head}>Cost</th> */}
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -108,83 +131,24 @@ const Order = () => {
                                                     <td>
                                                         1
                                                     </td>
-                                                    <td class="image-box"><img src="https://res.cloudinary.com/dm5krjksw/image/upload/v1665828324/ggp_ut1tsz.jpg" class="image1" /></td>
-                                                    <div class="info">
-                                                        <td>
-                                                            <h6>
-                                                                Gol Gappe
-                                                            </h6>
-                                                        </td>
-                                                        <td>
-                                                            <div class="count">
-                                                                2
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            500
-                                                        </td>
-                                                        <td>
-                                                            <div>
-                                                                1000
-                                                            </div>
-                                                        </td>
-                                                    </div>
-
-                                                </tr>
-                                                <tr>
+                                                    <td class={orderCss.image1}><img src={orderList.orderDetails[0].food[0].image} class="image1" /></td>
+                                                    {/* <div class="info"> */}
                                                     <td>
-                                                        1
+
+                                                        {orderList.orderDetails[0].food[0].name}
+
                                                     </td>
-                                                    <td class="image-box"><img src="https://res.cloudinary.com/dm5krjksw/image/upload/v1665828324/ggp_ut1tsz.jpg" class="image1" /></td>
-                                                    <div class="info">
-                                                        <td>
-                                                            <h6>
-                                                                Gol Gappe
-                                                            </h6>
-                                                        </td>
-                                                        <td>
-                                                            <div class="count">
-                                                                2
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            500
-                                                        </td>
-                                                        <td>
-                                                            <div>
-                                                                1000
-                                                            </div>
-                                                        </td>
-                                                    </div>
+                                                    <td class={orderCss.count}>
+
+                                                        {orderList.orderDetails[0].food[0].quantity}
+
+                                                    </td>
+
+                                                    {/* </div> */}
 
                                                 </tr>
-                                                <tr>
-                                                    <td>
-                                                        1
-                                                    </td>
-                                                    <td class="image-box"><img src="https://res.cloudinary.com/dm5krjksw/image/upload/v1665828324/ggp_ut1tsz.jpg" class="image1" /></td>
-                                                    <div class="info">
-                                                        <td>
-                                                            <h6>
-                                                                Gol Gappe
-                                                            </h6>
-                                                        </td>
-                                                        <td>
-                                                            <div class="count">
-                                                                2
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            500
-                                                        </td>
-                                                        <td>
-                                                            <div>
-                                                                1000
-                                                            </div>
-                                                        </td>
-                                                    </div>
 
-                                                </tr>
+
 
 
                                             </tbody>
@@ -193,6 +157,7 @@ const Order = () => {
 
                                     </div>
                                 </div>
+                                {/* </Collapse> */}
                             </div>
 
                         </div>

@@ -107,22 +107,8 @@ body {
 
 
 
-.OD {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 70px;
-    /* font-family: 'Rowdies', cursive; */
-    font-family: 'Syncopate', sans-serif;
-}
 
 
-.card {
-    border-radius: 25px;
-    box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
-    width: 100%;
-
-    /* can aslo use shadow class in table */
-}
 
 
 .image1 {

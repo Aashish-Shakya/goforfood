@@ -3,6 +3,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import FoodList from "../components/Menu/FoodList";
 
+import homeCss from "../assets/styles/home.module.css"
+import "../assets/styles/home.module.css"
+
 const HomepageLayout =
     (Component) =>
         ({ ...props }) => {

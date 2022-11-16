@@ -28,13 +28,14 @@ const LargeFoot = () => {
                     <div class="footer-links">
                         <a href="/" class="links">Home</a>
                         <a href="/services" class="links">Service</a>
-                        <a href="/aboutus" class="links">About Us</a>
+                        {/* <a href="/aboutus" class="links">About Us</a> */}
                         <a href="/gallery" class="links">Galery</a>
                         <a href="/contactus" class="links">Contact Us</a>
 
                     </div>
 
-                    <h3 class="disclaimer">Disclaimer!----</h3>
+                    <h3 class="disclaimer">Developed by Aashish Shakya</h3>
+                    <br />
                 </div>
             </div>
 

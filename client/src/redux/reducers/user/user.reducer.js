@@ -33,7 +33,7 @@ const userReducer = (state = initialState, action) => {
         case EDIT_USER:
             return {
                 ...state,
-                ...action.payload,
+
             };
         default:
             return {

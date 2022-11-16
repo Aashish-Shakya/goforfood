@@ -50,24 +50,24 @@ const MenuCard = (props) => {
 
 
 
-            <div class="menu--card-container">
-
-                <div class="menu--card">
-                    <div class="card--imgbx"><img src=
-                        {props.photos} alt="menu-item" class="menu--item-image" />
-                    </div>
-                    <div class="contentBx">
-                        <h2 class="menu--item-title">{props.name}</h2>
-                        <h3 class="menu--item-price">Price:<strike>1000</strike>{props.price}/-</h3>
-                        <button disabled={food?.isAddedToCart}
-                            onClick={addFoodToCart}>
-                            {food.isAddedToCart ? ("Added") : ("Add")}
 
 
-                        </button>
-                    </div>
+            <div class="menu--card">
+                <div class="card--imgbx"><img src=
+                    {props.photos} alt="menu-item" class="menu--item-image" />
+                </div>
+                <div class="contentBx">
+                    <h2 class="menu--item-title">{props.name}</h2>
+                    <h3 class="menu--item-price">Price:{props.price}/-</h3>
+                    <button disabled={food?.isAddedToCart}
+                        onClick={addFoodToCart}>
+                        {food.isAddedToCart ? ("Added") : ("Add")}
+
+
+                    </button>
                 </div>
             </div>
+
         </>
     )
 }

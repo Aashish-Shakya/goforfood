@@ -1,6 +1,8 @@
 import React from "react";
 import { BsTrashFill } from "react-icons/bs";
 
+import cx from "classnames"
+import cartCss from "../../assets/styles/cart.module.css"
 // redux
 import { useDispatch } from "react-redux";
 import {
@@ -20,49 +22,36 @@ const CartContainer = (props) => {
         if (props.quantity === 1) return;
         dispatch(decrementQuantity(props._id));
     };
-    console.log(props.items)
+    // console.log(props.items)
 
     return (
         <>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Product</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Cost</th>
-                        <th scope="col">Remove</th>
-                    </tr>
-                </thead>
-                <tbody>
 
 
-                    <tr>
-                        <td class="image-box"><img src={props.photos} style={{ height: "120px" }} /></td>
-                        <td class="about">
-                            <h1 class="title"> {props.name}
-                            </h1>
-                        </td>
-                        <td class="counter">
-                            <button class="btn" onClick={decrement}>-</button>
-                            <div class="count">{props.quantity}
-                            </div>
-                            <button class="btn" onClick={increment}>+</button>
-                        </td>
-                        <td class="unit_price">{props.price}
-                        </td>
-                        <td class="prices">
-                            <div class="amount">
-                                {parseInt(props.price) * parseInt(props.quantity)}
-                            </div>
-                        </td>
-                        <td>
-                            <div class="remove" onClick={deleteFoodFromCart}><u>Remove</u></div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+
+            <tr>
+                <td class={cartCss.imagebox}><img src={props.photos} style={{ height: "120px" }} /></td>
+                <td class={cartCss.about}>
+                    <h1 class={cartCss.title}> {props.name}
+                    </h1>
+                </td>
+                <td class={cartCss.counter} >
+                    <button class={cartCss.btn} onClick={decrement}>-</button>
+                    <div class={cartCss.count}>{props.quantity}
+                    </div>
+                    <button class={cartCss.btn} onClick={increment}>+</button>
+                </td>
+                <td class={cartCss.unitprice}>{props.price}
+                </td>
+                <td class={cartCss.prices}>
+                    <div class={cartCss.amount}>
+                        {parseInt(props.price) * parseInt(props.quantity)}
+                    </div>
+                </td>
+                <td >
+                    <div class={cartCss.remove} onClick={deleteFoodFromCart} ><BsTrashFill /></div>
+                </td>
+            </tr>
 
         </>
     )

@@ -43,7 +43,7 @@ const UserTable = (props) => {
       </table> */}
 
 
-      <UserModal show={show} onHide={handleClose} userId={props._id} userName={props.fullName} userRole={props.role} />
+      <UserModal show={show} onHide={handleClose} userId={props._id} userName={props.fullName} userRole={props.role} userEmail={props.email} />
     </>
   )
 }

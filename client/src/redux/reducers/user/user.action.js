@@ -65,7 +65,7 @@ export const editUser = (userData, _id) => async (dispatch) => {
         const User = await axios({
             method: "PUT",
             url: `http://localhost:4000/user/update/${userData._id}`,
-            data: { credentials: userData },
+            data: { userData: userData },
         });
 
         // localStorage.setItem(

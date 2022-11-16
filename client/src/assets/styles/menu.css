@@ -75,7 +75,14 @@
 /* ----------------------------------------------------------------------------------------------------------------------------------*/
 .menu-container {
     /* background-image: url(../images/menu-header-bg-1.jpg); */
+    /* 
+    display: flex;
+    flex-direction: row; */
+}
 
+.container {
+    display: flex;
+    flex-direction: column;
 }
 
 .menu {
@@ -90,26 +97,31 @@
 
 
 .menu--card-container {
-    display: flex;
+    /* display: flex; */
     /* flex-direction: column; */
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
+    /* justify-content: center; */
+    /* gap: 10px; */
+    /* flex-wrap: wrap; */
     /* margin-left: 20px; */
+    margin: 10px;
+
 }
 
 .menu--card {
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
-    width: 320px;
-    height: 450px;
+    /* width: 320px; */
+    height: 400px;
     background: rgb(250, 248, 248);
     border-radius: 20px;
     /* overflow: visible; */
     border: 2px solid black;
     /* box-shadow: 0 8px 16px 0 rgba(255, 255, 255, 0.904), 0 6px 20px 0 rgba(255, 255, 255, 0.922); */
     position: relative;
+    /* padding: 10px; */
+    /* margin: 10px; */
+
 }
 
 .card--imgbx {
@@ -117,11 +129,12 @@
     justify-content: center;
     transition: 0.5s;
     position: absolute;
-    top: 33%;
+    top: 40%;
     transform: translateY(-50%);
     width: 100%;
     height: 240px;
     transition: 0.5s;
+
 
 }
 
@@ -129,14 +142,15 @@
 .card--imgbx .menu--item-image {
     display: flex;
     justify-content: center;
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg); */
-    width: 270px;
+    /* position: absolute; */
+    /* top: 50%; */
+    /* left: 50%; */
+    /* transform: translate(-50%, -50%) rotate(0deg); */
+    width: 230px;
     height: 250px;
     background-size: cover;
     border-radius: 10px;
+
 }
 
 
@@ -154,6 +168,7 @@
     text-align: center;
     transition: 1s;
     z-index: 10;
+    /* margin-top: 500px; */
 }
 
 
@@ -183,7 +198,7 @@
     text-decoration: none;
     font-weight: 600;
     color: #111111;
-    transform: translateY(50px);
+    /* transform: translateY(50px); */
     transition: 0.5s;
     font-size: 20px;
     /* For hidding the content  opacity 0 */
@@ -197,7 +212,7 @@
     display: inline-block;
     padding: 10px 10px;
     width: 50%;
-    background: green;
+    background: rgb(16, 195, 16);
     border-radius: 4px;
     margin-top: 10px;
     text-decoration: none;

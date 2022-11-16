@@ -7,22 +7,30 @@ import OrderTable from "./OrderTable"
 const OrderList = (props) => {
 
     // const [orderList, setOrderList] = useState([]);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getOrder());
+        // dispatch(getAlhlUser());
+
+    }, []);
+
 
     const orderList = useSelector((globalState) => globalState.order.orders) || {};
 
     const [show, setShow] = React.useState(false)
 
-    React.useEffect(() => {
-        const timeout = setTimeout(() => {
-            setShow(true)
-        }, 5000)
+    // React.useEffect(() => {
+    //     const timeout = setTimeout(() => {
+    //         setShow(true)
+    //     }, 5000)
 
-        return () => clearTimeout(timeout)
+    //     return () => clearTimeout(timeout)
 
-    }, [show])
+    // }, [show])
 
-    if (!show) return null
-    var paymentDetails = Object.values(orderList)[3]
+    // if (!show) return null
+    // var paymentDetails = Object.values(orderList)[3]
 
 
 
@@ -35,11 +43,12 @@ const OrderList = (props) => {
 
     // console.log(typeof (orderList))
 
+    console.log("orderList")
     console.log(orderList)
-    paymentDetails.forEach(order => {
-        console.log(order.food)
+    // paymentDetails.forEach(order => {
+    //     console.log(order.food)
 
-    })
+    // })
 
     // console.log(Object.values(orderList))
     // {
@@ -93,9 +102,9 @@ const OrderList = (props) => {
                     console.log("EMpty")
                 ) : (
                     <div className="grid gap-0 md:gap-2 md:grid-cols-2 grid-cols-1 lg:grid-cols-3">
-                        {/* {orderList.map((item) => (
-                        <OrderTable {...item} key={item._id} />
-                    ))} */}
+                        {orderList.map((item) => (
+                            <OrderTable {...item} key={item._id} />
+                        ))}
                     </div>
                 )
 

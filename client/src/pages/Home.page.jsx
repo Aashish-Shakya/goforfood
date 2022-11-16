@@ -42,8 +42,8 @@ const Home = () => {
                 {type === "menu" && <MenuPage />}
                 {type === "cart" && <CartPage />}
                 {type === "order" && <OrderPage />}
-                {type === "signin" && <SignIn />}
-                {type === "signup" && <SignUp />}
+                {/* {type === "signin" && <SignIn />}
+                {type === "signup" && <SignUp />} */}
                 {type === "contactus" && <ContactUs />}
                 {type === "gallery" && <Gallery />}
             </div>

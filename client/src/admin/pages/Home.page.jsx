@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Modals from "../components/Modal/Dish.modal"
+
 import AdminNavbar from '../components/Navbar';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -12,7 +12,7 @@ import dish from "../assets/images/dish.png"
 
 import Footer from "../components/Footer"
 import Button from "react-bootstrap/esm/Button";
-import addDishModals from '../components/Modal/addDish.modal';
+import addDishModals from '../components/Modal/AddDish.modal';
 
 import "../assets/styles/adminHome.css"
 // Layout
@@ -28,10 +28,6 @@ const Home = () => {
 
 
 
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
 
     const dispatch = useDispatch();
     useEffect(() => {
@@ -92,8 +88,8 @@ const Home = () => {
 
                         </Col>
                         <Col md={4}>
-
-                            <Card onClick={handleShow} >
+                            <Link to="/dishes" className="text-decoration-none"> <Card >
+                                {/* <Card onClick={handleShow} > */}
                                 <Card.Body className="text-center">
                                     <div className="tilter">
                                         <div className="container">
@@ -103,7 +99,7 @@ const Home = () => {
                                             {/* <img className="img-fluid" src=" " alt="" /> */}
 
                                         </div>
-                                        <p className="text display-4">{dishList.length}</p>
+                                        <p className="text-dark display-4">{dishList.length}</p>
                                         <p className="display-4 text-muted">Dishes</p>
                                     </div>
                                 </Card.Body>
@@ -111,7 +107,7 @@ const Home = () => {
 
 
 
-                            </Card>
+                            </Card></Link>
 
                         </Col>
                         <Col md={4}>
@@ -142,8 +138,6 @@ const Home = () => {
 
                 </Container>
             </Container>
-
-            <Modals show={show} handleClose={handleClose} handleShow={handleShow} />
             {/* <Footer /> */}
         </>
     );

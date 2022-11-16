@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import addDishModals from './addDish.modal';
+import addDishModals from './AddDish.modal';
 
 const Modals = (props) => {
 
@@ -27,19 +27,19 @@ const Modals = (props) => {
         <Modal.Body>
           <div class="dish-btn">
 
-            <Button variant="primary" >Add</Button>
+            <Button variant="primary" style={{ background: "rgb(124 58 237)" }} onClick={handleShow} >Add</Button>
 
             <Link to="/dishes">
-              <Button variant="primary">Edit</Button>
+              <Button variant="primary" style={{ background: "rgb(124 58 237)" }} >View</Button>
 
             </Link>
-            <Link to="/"  >
-              <Button variant="primary">View</Button>
-            </Link>
+            {/* <Link to="/menu" >
+              <Button variant="primary" style={{ background: "rgb(124 58 237)" }} >View</Button>
+            </Link> */}
           </div>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button style={{ background: "rgb(113 113 122)" }} onClick={handleClose}>
             Close
           </Button>
           {/* <Button variant="primary">Understood</Button> */}

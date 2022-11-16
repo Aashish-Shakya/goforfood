@@ -16,13 +16,26 @@ const FoodList = (props) => {
     console.log(reduxState)
     return (
         <>
+            <div class="container"  >
+                {/* <!-- Need to add chalk font in dish category --> */}
+                {/* <div class="menu--category" id="category">
+                    <span>  Indian</span>
+                </div> */}
 
-            <div className="grid gap-0 md:gap-2 md:grid-cols-2 grid-cols-1 lg:grid-cols-3">
-                {foodList.map((food) => (
-                    <MenuCard {...food} key={food._id} />
+                <div class="menu--card-container grid grid-cols-4 gap-4">
 
-                ))}
+                    {foodList.map((food) => (
+
+                        <MenuCard {...food} key={food._id} />
+
+                    ))}
+
+
+
+                </div>
+
             </div>
+
         </>
     )
 }

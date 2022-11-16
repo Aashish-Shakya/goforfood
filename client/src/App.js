@@ -49,6 +49,7 @@ function App() {
         <Route path="cart" element={<CartPage />} />
         <Route path="order" element={<OrderPage />} />
         <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
         <Route path="contactus" element={<ContactUs />} />
         <Route path="gallery" element={<Gallery />} />
         <Route path="aboutus" element={<Aboutpage />} />

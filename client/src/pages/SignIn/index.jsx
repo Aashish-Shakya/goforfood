@@ -48,7 +48,7 @@ const SignIn = ({ isOpen, setIsOpen }) => {
                     </center>
 
                     <br />
-                    <h3 className={signInCss.msg}> </h3>
+                    {/* <h3 className={signInCss.msg}> </h3> */}
 
                     <br />
 
@@ -77,11 +77,11 @@ const SignIn = ({ isOpen, setIsOpen }) => {
 
                         {/* //Added extra need some inprovment */}
                         <div className={signUpCss.icon} flex justify-content-center>
-                            <ul className={signUpCss.unicon}>
+                            {/* <ul className={signUpCss.unicon}>
 
                                 <li><a href="#"><img src={googleLogo} alt="" className={signUpCss.fb} width="60px" /></a>
                                 </li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </form>
                 </div>

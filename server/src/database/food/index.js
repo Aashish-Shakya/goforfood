@@ -8,12 +8,12 @@ const FoodSchema = new mongoose.Schema(
         category: { type: String, required: true },
         photos: { type: String, required: true },
         price: { type: Number, default: 150, required: true },
-        addOns: [
-            {
-                type: mongoose.Types.ObjectId,
-                ref: "foods",
-            },
-        ],
+        // addOns: [
+        //     {
+        //         type: mongoose.Types.ObjectId,
+        //         ref: "foods",
+        //     },
+        // ],
 
     },
     {

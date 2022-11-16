@@ -13,20 +13,17 @@ const DishList = (props) => {
     useEffect(() => {
         reduxState && setFoodList(reduxState)
     }, [reduxState])
-    console.log(reduxState)
+    // console.log(reduxState)
 
     return (
         <>
             <Table rounded-border rounded-end hover >
                 <thead class="thead">
                     <tr class="text-muted display-6">
-                        <th scope="col" class="head">S.No</th>
                         <th scope="col" class="head">Category</th>
                         <th scope="col" class="head">Product</th>
                         <th scope="col" class="head">Name</th>
                         <th scope="col" class="head">Price</th>
-                        {/* <th scope="col" class="head">Discount</th>
-                        <th scope="col" class="head">Cost</th> */}
                         <th scope="col" class="head">Action</th>
                     </tr>
                 </thead>

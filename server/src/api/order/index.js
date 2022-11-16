@@ -64,23 +64,21 @@ Router.put(
     async (req, res) => {
         try {
             const { user } = req;
+            console.log(user._id)
+            // const { orderDetails } = req.body;
+            // console.log(user);
 
-            const { orderDetails } = req.body;
-            console.log(user);
 
+            const addNewOrder = await OrderModel.create(
 
-            const addNewOrder = await OrderModel.findOneAndUpdate(
                 {
                     user: user._id,
-                },
-                {
-                    $push: {
-                        orderDetails: orderDetails,
-                    },
-                },
-                {
-                    new: true,
+
+
+                    orderDetails: req.body,
+
                 }
+
             );
 
             return res.json({ order: addNewOrder });

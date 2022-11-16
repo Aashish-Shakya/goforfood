@@ -6,8 +6,8 @@ const OrderTable = (props) => {
   // const [user, setUser] = useState({});
   // const dispatch = useDispatch();
   // const userList = useSelector((globalState) => globalState.user.userList) || {};
-  console.log(props.paymentDetails.itemTotal)
-  console.log(props.food)
+  // console.log(props.paymentDetails.itemTotal)
+  console.log(props)
   return (
     <>
 
@@ -19,6 +19,7 @@ const OrderTable = (props) => {
 
         {/* <td>{props._id}</td> */}
         <td>{props.status}</td>
+        <td>Hello</td>
         {/* <td>{props.paymode}</td> */}
         {/* <td>{props.paymentDetails.food.details}</td> */}
 

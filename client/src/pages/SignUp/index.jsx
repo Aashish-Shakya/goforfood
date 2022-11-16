@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Footer from '../../components/Footer'
 import Navbar from '../../components/Navbar'
 import signUpCss from "../../assets/styles/signUp.module.css"
-import cx from "classnames"
+
 import fbLogo from "../../assets/images/fb.jfif"
 import instaLogo from "../../assets/images/instagram.png"
 import googleLogo from "../../assets/images/google.jfif"

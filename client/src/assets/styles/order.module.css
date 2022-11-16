@@ -1,12 +1,16 @@
-.order-details {
+.orderDetails {
     border: 1.4px solid black;
     padding: 5px 8px;
     background-color: rgba(189, 182, 182, 0.089);
     width: 260px;
     border-radius: 8px;
+    font-weight: 600;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
-.card-link {
+
+.cardLink {
     background-color: rgba(0, 0, 255, 0.788);
     color: white;
     padding: 7px 9px;
@@ -14,32 +18,40 @@
     border-radius: 6px;
 }
 
-.card-link:hover {
+.cardLink:hover {
     color: white;
 }
 
 .container {
-    /* margin-top: 50px; */
-    display: flex;
-    flex-direction: column;
+    margin-top: 50px;
+
+    /* display: flex;
+    flex-direction: column; */
 }
 
-.card-header {
+.cardHeader {
     height: 40%;
     margin: 25px;
-    /* padding: 10px 10px; */
+    padding: 10px 10px;
+    box-shadow: 0 0 3rem .5rem hsla(0, 0%, 0%, .2);
+    border-radius: 10px;
+    justify-content: center;
+    display: flex;
 }
 
 .table {
     width: 80%;
     align-items: center;
     justify-content: center;
+
 }
 
 .table1 {
     width: 100%;
     align-items: center;
     justify-content: center;
+    background-color: rgba(189, 182, 182, 0.089);
+
 }
 
 .table {
@@ -48,6 +60,7 @@
     justify-content: center;
     background-color: rgba(189, 182, 182, 0.089);
     border: 2px solid grey;
+
 }
 
 .head {
@@ -82,8 +95,10 @@ td {
     border-radius: 60px;
 }
 
-div#accordion {
-    min-height: 210px;
+#accordion {
+    min-height: 200px;
+    border: 1px solid silver;
+    margin: 10px;
 }
 
 h1 {
@@ -95,7 +110,7 @@ h1 {
     margin-top: 230px;
 }
 
-.card-body {
+.cardBody {
     display: flex;
     justify-content: center;
     align-items: center;

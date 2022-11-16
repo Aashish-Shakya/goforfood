@@ -1,10 +1,17 @@
 /* For flying base */
-.Cart-Container {
+.container {
+    margin: 10px;
+
+
+}
+
+.CartContainer {
     background-color: #ffffff;
     border-radius: 20px;
     box-shadow: 0px 25px 40px #1687d933;
     background-size: cover;
     margin-top: 100px;
+    border: 2px solid black;
 }
 
 /* header */
@@ -23,6 +30,7 @@
     font-weight: 700;
     color: #2F3841;
     padding-top: 10px;
+    margin-bottom: 30px;
     text-align: center;
 }
 
@@ -46,12 +54,12 @@
     align-items: center;
 }
 
-.image-box {
+.imagebox {
     width: 15%;
     text-align: center;
 }
 
-.image-box img {
+.imagebox img {
     border-radius: 25px;
     padding: 15px;
 }
@@ -101,7 +109,7 @@
 }
 
 /* price */
-.unit_price {
+.unitprice {
     font-size: 26px;
     font-family: "Open Sans";
     font-weight: 800;
@@ -144,24 +152,39 @@
 
 .table {
     width: auto;
+    align-items: center;
+    /* display: flex;
+    flex-direction: column; */
+
+}
+
+.table th {
+    font-size: larger;
+    color: #24b47fe4;
+
 }
 
 td,
 th {
     text-align: center;
     vertical-align: middle;
+    justify-content: center;
+    /* gap: 10px; */
+
 }
 
 /* jkbbbbbbbbbbbbbb */
 .cartbody {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
     display: flex;
+    width: 100%;
+    background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
+
     justify-content: center;
+    /* margin-bottom: 10px; */
+    /* margin-top: -10px; */
 }
 
-.Cart-Container {
+.CartContainer {
     padding: inherit;
     background-color: #ffffff;
     border-radius: 20px;
@@ -178,25 +201,21 @@ i {
     margin: 0 -16px;
 }
 
-.col-25,
-.col-50,
-.col-75 {
+.col25,
+.col50,
+.col75 {
     padding: 0 26px;
     flex: 75%;
 
 }
 
-.DA {
+.da {
     font-size: 38px;
+    font-weight: 550;
     text-align: center;
     font-family: 'Dongle', sans-serif;
 }
 
-.container {
-    height: fit-content;
-    /* padding: 20px; */
-    width: auto;
-}
 
 input[type=text] {
     width: 100%;
@@ -264,7 +283,7 @@ span.price {
         flex-direction: column-reverse;
     }
 
-    .col-25 {
+    .col25 {
         margin-bottom: 20px;
     }
 }
@@ -275,18 +294,22 @@ span.price {
 
 .cart {
     height: fit-content;
-    min-width: 739px;
+    min-width: 680px;
 }
 
 .remove {
-    padding: 5px;
-    font-size: 14px;
-    font-family: 'Open Sans';
-    font-weight: 600;
-    background-color: #E44C4C;
-    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    /* padding: 5px; */
+    font-size: 25px;
+    /* font-family: 'Open Sans';
+    font-weight: 600; */
+    /* background-color: #E44C4C; */
+    /* color: whitesmoke; */
     cursor: pointer;
-    border-radius: 15px;
+    /* border-radius: 15px; */
+
+    /* margin-left: 10px; */
 }
 
 hr {
@@ -320,7 +343,7 @@ hr {
     line-height: 10px;
 }
 
-.total-amount {
+.totalamount {
     font-size: 36px;
     font-family: �Open Sans�;
     font-weight: 900;

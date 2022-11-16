@@ -38,13 +38,13 @@
 
     /* background: linear-gradient(45deg, #2980b9, #2c3e50); */
 
-    /* min-width: 300px;
-    min-height: 450px; */
+    min-width: 300px;
+    min-height: 480px;
     gap: 20px;
 
     border: 1px solid black;
     border-radius: 1.6rem;
-    box-shadow: 1 0 2rem .5rem hsla(0, 0%, 0%, .2);
+    box-shadow: 0 0 1rem .5rem hsla(0, 0%, 0%, .2);
 }
 
 .tilter h2 {
@@ -326,7 +326,7 @@ input[type=text] {
 .dish-btn {
     display: flex;
 
-    justify-content: space-between;
+    justify-content: space-around;
 
 
 }

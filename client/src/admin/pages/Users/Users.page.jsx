@@ -30,9 +30,9 @@ const Userspage = () => {
 
 
             {/* <br /><br /><span class={cx(signUpCss.dot, signUpCss.three)}></span> */}
-            <h2 class="OD">User Details </h2>
+            <h2 class="text-8xl text-center pb-12 pt-5">User Details </h2>
 
-            <div class="container">
+            <div class="container display-block shadow-lg rounded-3xl">
                 <div class="card">
                     <div class="card-body">
                         <UserList />
@@ -40,7 +40,7 @@ const Userspage = () => {
                 </div>
             </div>
             <br /><br />
-            <div class="float-end">
+            <div class="text-end">
                 <a href="/home" class="button glow-button">Back To Home</a>
             </div>
             <br /><br /><br /><br />

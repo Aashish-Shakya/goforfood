@@ -1,0 +1,164 @@
+ .body12 {
+     background: rgba(0, 0, 0, 0.7) url("../images/alter.jpg");
+     background-size: cover;
+     background-blend-mode: darken;
+     /* background: #f0f0f2; */
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-blend-mode: darken;
+     color: #f0f0f2;
+ }
+
+ body {}
+
+ .logo img {
+
+     width: 35px;
+
+     height: 32px;
+
+     border: 2px solid white;
+
+     border-radius: 35px;
+
+     padding: 1px 1px;
+
+ }
+
+ .heading {
+     margin-top: 2%;
+     text-align: center;
+     font-size: 56px;
+     font-family: 'Luxurious Roman', cursive;
+ }
+
+ .gallcontainer {
+     display: flex;
+     flex-wrap: wrap;
+     align-content: space-between;
+     border: 1cm;
+ }
+
+ /* @keyframes bounce {
+    0%, 20%, 60%, 100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+    40% {
+      -webkit-transform: translateY(-20px);
+      transform: translateY(-20px);
+    }
+    80% {
+      -webkit-transform: translateY(-10px);
+      transform: translateY(-10px);
+    }
+  } */
+ .hoverimg img {
+     height: 200px;
+     width: 350px;
+     padding: 10px;
+ }
+
+ .imgzoom {
+     border-radius: 20px;
+ }
+
+ .imgzoom img {
+     transform-origin: 35% 55%;
+     transition: transform 1s, filter .5s ease-out;
+ }
+
+ .imgzoom:hover img {
+     transform: scale(2);
+ }
+
+ .hoverimg {
+     background-color: white;
+     color: #fff;
+     display: inline-block;
+     margin: 8px;
+     max-width: 320px;
+     min-width: 240px;
+     overflow: hidden;
+     position: relative;
+     text-align: center;
+     width: 100%;
+ }
+
+ .hoverimg * {
+     box-sizing: border-box;
+     transition: all 0.45s ease;
+ }
+
+ figcaption {
+     color: black;
+ }
+
+ .hoverimg:before {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     content: '';
+     transition: all 0.3s ease;
+     z-index: -1;
+     opacity: 0;
+     border-radius: 10px;
+ }
+
+ .hoverimg:after {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     content: '';
+     transition: all 0.3s ease;
+     z-index: -1;
+     opacity: 0;
+     transform: scaleY(2);
+     border-radius: 10px;
+ }
+
+ .hoverimg img {
+     vertical-align: top;
+     max-width: 100%;
+     backface-visibility: hidden;
+ }
+
+ .hoverimg figcaption {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     align-items: center;
+     z-index: 1;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     line-height: 1.1em;
+     opacity: 0;
+     z-index: 2;
+     transition-delay: 0.1s;
+     font-size: 14px;
+     font-family: sans-serif;
+     font-weight: 400;
+     letter-spacing: 1px;
+     text-transform: uppercase;
+ }
+
+ .hoverimg:hover:before,
+ .hoverimg:hover:after {
+     transform: scale(1);
+     opacity: 1;
+ }
+
+ .hoverimg:hover>img {
+     opacity: 0.7;
+ }
+
+ .hoverimg:hover figcaption {
+     opacity: 1;
+ }

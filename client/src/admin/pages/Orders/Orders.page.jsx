@@ -17,11 +17,10 @@ const Orderspage = () => {
     return (
         <>
 
-            <br /><br />
-            <h2 class="OD">OrderDetails</h2>
-            <br /><br />
-            {/* <!-- <h1>Total Order{{this.countOrder}}</h1> --> */}
-            <div class="container">
+
+            <h2 class="text-8xl text-center pb-12 pt-4">Order Details</h2>
+
+            <div class="container display-block shadow-lg rounded-3xl ">
 
                 <div class="card">
 

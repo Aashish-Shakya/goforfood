@@ -21,19 +21,23 @@ const UserContainer = (props) => {
     });
 
     const handleChange = (e) => {
-        setUserData((prev) => ({ ...prev, [e.target.id]: e.target.value }));
+        setUserData((prev) => ({ ...prev, [e.target.id]: e.target.value || e.target.defaultValue }));
     };
 
     const dispatch = useDispatch();
     // const closeModal = () => {
     //     { () => { handleClose } }
     // };
-    console.log(userData)
+    // console.log(userData)
+
     const submit = async () => {
         await dispatch(editUser(userData, userData._id));
         // closeModal()
-        // props.onHide,
+
+        window.location.reload(false)
+
         setUserData({ fullName: "", email: "", phoneNumber: "", address: "" });
+        console.log(userData)
     };
 
 
@@ -54,36 +58,38 @@ const UserContainer = (props) => {
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
-                        <span  >FullName</span>
+                    <Form  >
+                        {/* <span  >FullName</span>
                         <input type="text" id="fullName" name="fname" value={userData.fullName}
                             onChange={handleChange}
                             placeholder="John Doe"
-                            required />
+                            required /> */}
 
                         <Form.Group className="mb-3" controlId="fullName">
                             <Form.Label>Name</Form.Label>
                             <Form.Control
-                                type="text"
-                                name="fname"
-
-                                placeholder="Name"
-                                value={userData.fullName}
+                                type="fullName"
+                                id="fullName"
+                                placeholder="John Doe"
                                 autoFocus
+                                defaultValue={props.userName}
+
                                 onChange={handleChange}
                             />
-                            <Form.Label>Email address</Form.Label>
-                            <Form.Control type="email" placeholder="Enter email" />
+
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control
                                 type="email"
-                                // value={props.userId}
+                                id="email"
+                                placeholder="email@gmail.com"
                                 autoFocus
+                                defaultValue={props.userEmail}
+                                onChange={handleChange}
                             />
                         </Form.Group>
-                        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+                        {/* <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                             <Form.Label>Role</Form.Label>
                             <Form.Control
                                 type="email"
@@ -97,7 +103,7 @@ const UserContainer = (props) => {
                         >
                             <Form.Label>Example textarea</Form.Label>
                             <Form.Control as="textarea" rows={3} />
-                        </Form.Group>
+                        </Form.Group> */}
                     </Form>
                 </Modal.Body>
                 <Modal.Footer>
@@ -107,6 +113,7 @@ const UserContainer = (props) => {
                     <Button variant="primary" type="submit" onClick={submit} >
                         Save Changes
                     </Button>
+
                 </Modal.Footer>
             </Modal>
         </>

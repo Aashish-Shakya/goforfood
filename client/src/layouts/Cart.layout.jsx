@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-// import cartCss from "../assets/styles/cart.css"
+import cartCss from "../assets/styles/cart.module.css"
 import CartContainer from "../components/cart/CartContainer";
 const Cartlayout = (Component) =>
     ({ ...props }) => {

@@ -20,9 +20,11 @@ const OrderList = () => {
 
                         <th scope="col" class="head">BILL_NO</th>
                         <th scope="col" class="head">USERID</th>
-                        <th scope="col" class="head">TOTAL_AMOUNT</th>
+                        <th scope="col" class="head">Dish Name</th>
+                        <th scope="col" class="head">Dish Image</th>
+                        <th scope="col" class="head">Total </th>
                         {/* <th scope="col" class="head">ADDRESS</th> */}
-                        <th scope="col" class="head">TRANSACTION_ID</th>
+                        {/* <th scope="col" class="head">TRANSACTION_ID</th> */}
                         <th scope="col" class="head">STATUS</th>
 
                     </tr>

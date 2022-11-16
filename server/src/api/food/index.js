@@ -42,6 +42,28 @@ Router.get("/:_id", async (req, res) => {
     }
 })
 
+Router.delete(
+    "/delete/:id",
+    async (req, res) => {
+        try {
+            const { food } = req;
+            const { id } = req.params;
+
+            const data = await FoodModel.findOneAndDelete({
+                _id: id,
+
+            });
+
+            if (!data) {
+                return res.json({ message: "Food was not deleted" });
+            }
+
+            return res.json({ message: "Successfully deleted the Dish.", data });
+        } catch (error) {
+            return res.status(500).json({ error: error.message });
+        }
+    }
+);
 /**
  * Route    :-  /r/:_id
  * Desc     :- Get all food based on particulat restaurant
@@ -78,45 +100,32 @@ cloudinary.config({
  * 
  */
 
+// Router.post("/signup", async (req, res) => {
+//     try {
+//         await ValidateSignup(req.body.credentials);
+
+//         await UserModel.findByEmailAndPhone(req.body.credentials);
+//         const newUser = await UserModel.create(req.body.credentials);
+//         const token = newUser.generateJwtToken();
+
+//         return res.status(200).json({ token, status: "success" })
+
+//     } catch (error) {
+//         return res.status(500).json({ error: error.message });
+
+//     }
+// });
 Router.post(
-    "/new/image",
+    "/new/dish",
     // passport.authenticate("jwt", { session: false }),
     async (req, res) => {
         try {
-            const { name, description, isVeg, category, photos, price } = req.body
+            // const { name, description, isVeg, category, photos, price } = req.body
 
-            const result = await cloudinary.uploader.upload(
-                photos,
-                {
-
-                    folder: "dish",
-
-                }, (err, image) => {
-                    if (err) {
-                        console.log(err);
-                    }
-                    console.log("File Uploaded");
-
-
-                }
-            );
-
-
-            const dish = await FoodModel.create({
-                name,
-                description,
-                isVeg,
-                category,
-                photos: `${cloudinary.url(result.public_id + ".jpg")}`,
-                price
-
-
-            });
+            const newDish = await FoodModel.create(req.body.dishData);
 
             return res.status(200).json({
-                data: {
-                    dish
-                },
+                status: "success"
             });
 
         } catch (error) {

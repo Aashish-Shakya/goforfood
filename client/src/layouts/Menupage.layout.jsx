@@ -23,11 +23,11 @@ const MenupageLayout =
                     </div>
 
 
-                    <div class="menu1">
+                    {/* <div class="menu1">
                         <nav class="navbar1">
                             <ul class="nav-list1">
 
-                                <li class="category"><a>American </a></li>
+                                <li class="category"><a href="#north">American </a></li>
                                 <li class="category"><a>Italian </a></li>
                                 <li class="category"><a>Chinese </a></li>
                                 <li class="category"><a>South-Indian </a></li>
@@ -35,7 +35,7 @@ const MenupageLayout =
                                 <li class="category"><a>Drinks </a></li>
                             </ul>
                         </nav>
-                    </div>
+                    </div> */}
                     <div class="menu-container" >
                         <div class="menu--title">
 
@@ -45,21 +45,23 @@ const MenupageLayout =
                         {/* <!-- Menu --> */}
                         <div class="menu">
 
-                            <div class="container">
-                                {/* <!-- Need to add chalk font in dish category --> */}
-                                <div class="menu--category" id="category">
-                                    <span>  Indian</span>
-                                </div>
+                            {/* <div class="container"> */}
 
-                                <FoodList />
+                            {/* <div class="menu--category" id="category">
+                                <span>  Indian</span>
+                            </div> */}
 
 
 
-                            </div>
+                            <FoodList />
+
+
+
+                            {/* </div> */}
 
                             <br /><br />
                         </div>
-
+                        {/* <div id="north" className="menu--category">Hello All</div> */}
                         <div class="checkout">
                             <button class="checkout--button">Checkout</button>
                         </div>
